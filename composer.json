@@ -1,0 +1,13 @@
+{
+    "name": "adrien/projet_cine",
+    "description": "projet site cine",
+    "authors": [
+        {
+            "name": "adrien88",
+            "email": "adrien.boilley@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
