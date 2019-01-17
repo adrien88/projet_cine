@@ -2,7 +2,7 @@
 <?php
 
   $DB = [
-    'name'=>'films',
+    'name'=>'Cafeinline',
     'host'=>'localhost',
     'login'=>'Next',
     'passwd'=>'Next'
@@ -22,21 +22,36 @@
    print('Database connection error : '.$e);
  }
 
-// PDO
-// nom de la table
-//tableau data :
-//  [titre] = film
-function push($PDO, $table, array $data) {
-  // formater la requête
-  $prepreq = implode(',',array_keys($data));
-  $prepval = ':'.implode(',:',array_keys($data));
-  //
-  $req = "INSERT INTO $table ($prepreq) VALUES ($prepval)";
-  $stat=$PDO -> prepare($req);
-  $stat -> execute($data);
-  if (empty($error = $stat->errorCode())){
-    return true;
-  } else{
-    return false;
-  }
-}
+
+ // PDO
+ // nom de la table
+ //tableau data :
+ //  [titre] = film
+ function reqpush($PDO, $table, array $data) {
+   // formater la requête
+   $prepreq = implode(',',array_keys($data));
+   $prepval = ':'.implode(',:',array_keys($data));
+   // Sand
+   $req = "INSERT INTO $table ($prepreq) VALUES ($prepval)";
+   echo $req;
+   $stat = $PDO -> prepare($req);
+   $stat -> execute($data);
+   if(
+     ($error = $stat->errorInfo()[2]) &&
+     !empty($error)
+   ) {
+     return $error;
+   }
+   else {
+     return true;
+   }
+
+ }
+
+ reqpush($PDO,'User',[
+   'Prenom'=>'Jean-René',
+   'Nom'=>'Boilley',
+   'Departement'=>'Cote d\'Or',
+   'Age'=>67,
+   'Sexe'=>'homme']
+ );

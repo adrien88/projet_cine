@@ -21,8 +21,7 @@ $_GET=array_merge($_GET,router::auto($landingDefaut,$structDefaut));
 // inclure Controler
 include 'model/php/movies.php';
 
-
-//
+// 
 require_once 'vendor/autoload.php';
 
 // inlude twig
