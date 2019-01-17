@@ -1,6 +1,14 @@
 
 <?php
 
+  $DB = [
+    'name'='films',
+    'host'='localhost',
+    'login'='Next',
+    'passwd'='Next'
+  ];
+
+
  //  DATABASE Controler
  // Init DB connect
  try {
