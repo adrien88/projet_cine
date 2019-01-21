@@ -1,2 +1,4 @@
+## require all denied
 
-rewriteRule
+RewriteEngine on
+RewriteRule "/(.*)" '?$1'
