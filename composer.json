@@ -1,13 +1,8 @@
 {
     "name": "adrien/projet_cine",
-    "description": "projet site cine",
-    "authors": [
-        {
-            "name": "adrien88",
-            "email": "adrien.boilley@gmail.com"
-        }
-    ],
+    "description": "projet",
     "require": {
-        "twig/twig": "^2.0"
-    }
+        "twig/extensions": "2.0"
+    },
+    "license": "GPL"
 }
