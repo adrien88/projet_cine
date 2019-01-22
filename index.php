@@ -1,6 +1,5 @@
 <?php
 
-
 //  display errors
 ini_set('display_errors','1');
 
@@ -12,6 +11,9 @@ spl_autoload_register(function ($class) {
     include 'model/php/'.$class.'.class.php';
 });
 
+session_start();
+// Import PHP PDO
+require_once 'model/php/pdo.php';
 
 // include 'lib/model/php/router.class.php';
 // // Creer le routage
@@ -24,8 +26,6 @@ $_GET=router::auto($landingDefaut,$getStruct);
 
 // $_GET['page']='home.html';
 
-// Import PHP PDI
-require_once 'model/php/pdo.php';
 
 // inlude twig
 require_once 'vendor/autoload.php';

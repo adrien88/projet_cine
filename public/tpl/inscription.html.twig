@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Inscription</title>
+</head>
+
+<body>
+
+    <header></header>
+    <main class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <h2>INSCRIVEZ-VOUS</h2>
+                <div class="col-12"></div>
+                <ul>En créant votre espace personnel, vous pourrez :</ul>
+                <li>commenter les films</li>
+                <li>soumettre des films</li>
+                <!--<li>créer une liste de favoris</li>-->
+                <!--<li>donner des notes</li>-->
+            </div>
+        </div>
+        <form method="post" action="">
+            <div class="row">
+                <div class="col-6">
+                    <label for="pseudo" placeholder="Pseudo">Pseudo :</label><br>
+                    <input type="text" name="pseudo" value="{%if pseudo is defined%} {{ pseudo }} {%endif%}">
+                </div>
+                <div class="col-6">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="email">Email :</label><br>
+                    <input type="email" name="mail1" value="{%if email is defined%} {{ email }} {%endif%}">
+                </div>
+                <div class="col-6">
+                    <label for="email">Confirmez votre email :</label><br>
+                    <input type="email" name="mail2">
+                </div>
+            </div>
+            <div class=row>
+                <div class="col-6">
+                    <label for="password">Mot de passe :</label><br>
+                    <input type="password" name="mdp1">
+                </div>
+                <div class="col-6">
+                    <label for="password">Confirmez votre mot de passe :</label><br>
+                    <input type="password" name="mdp2">
+                </div>
+            </div>
+            <button type="submit" value="submit">Soumettre</button>
+        </form>
+
+        {%if erreur is defined%} {{ erreur }} {%endif%}
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script src=js.js></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>
