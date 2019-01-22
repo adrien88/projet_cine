@@ -1,4 +1,6 @@
 ## require all denied
 
 RewriteEngine on
-RewriteRule "/(.*)" '?$1'
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?$1 [NC,L,QSA]

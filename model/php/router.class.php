@@ -23,11 +23,11 @@ class router {
     $lst = array_pop($struc);
     foreach(explode('/', $str) as $part){
       if(isset($struc[$i])){
-        $PATH[$struc[$i]]=$part;
+        $PATH[$struc[$i]]=str_replace('_','.',$part);
         $i++;
       }
       else{
-        $PATH[$lst][]=$part;
+        $PATH[$lst][]=str_replace('_','.',$part);
       }
     }
     return $PATH;
