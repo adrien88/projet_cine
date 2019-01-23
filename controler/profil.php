@@ -12,6 +12,13 @@ if(isset($_SESSION['id']) AND $_SESSION['id'] > 0) {
    echo $twig->render('profil.html.twig', array('id' => 'id', 'pseudo' => 'pseudo', 'email' => 'mail1', 'password' => 'mdp1'));
 }
 
+
+// afficher films soumis
+$requete = $PDO->prepare('SELECT affiche FROM films WHERE nom = \''.$_SESSION['id'].'\'');
+$requete->execute();
+$data =  $requete->fetchAll();
+
+
 // verif formulaire soumission de films
 if(isset($_POST) and !empty($_POST)){
    $titre = ($_POST['titre']);
