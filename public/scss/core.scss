@@ -1,9 +1,86 @@
-body {
-  
-  header {
 
+
+$fonttitle : 0 ;
+$fonttext : 0 ;
+
+$colorbgbody : gray;
+$colorbody : gray;
+
+$colorbgElem : white;
+$colorElem : #222;
+
+
+body {
+  // get all width of screen
+  padding-left:0px !important;
+  padding-right:0px !important;
+
+  h1 {
+    font-size:2.5em;
   }
+  h2 {
+    font-size:1.4em;
+  }
+  h3 {
+    font-size:1.2em;
+    font-weight:bold;
+  }
+  h4 {
+    font-size:1.1em;
+  }
+
+
+  background-color:$colorbgbody;
+
+  header {
+    padding:1em;
+    background-color:$colorbgElem;
+    color:$colorElem;
+
+    nav#navbar{
+      background-color:maroon !important;
+      color:white !important;
+
+      a, button, input {
+        color:white !important;
+        background-color:maroon !important;
+        border-color:white !important;
+        &:hover{
+          color:white !important;
+          background-color:maroon !important;
+          border-color:white !important;
+
+        }
+      }
+    }
+  }
+
+  main {
+    background-color:$colorbgElem;
+    padding:1em;
+    color:$colorElem;
+  }
+
   footer {
+    background-color:$colorbgElem;
+    color:$colorElem;
+    padding:1em;
+
+    div {
+      &:first-child {
+        div#footer-title {
+          padding:.5em;
+          background-color:maroon;
+          color:white;
+          text-align:center;
+          text-transform: uppercase;
+          letter-spacing: .25em;
+        }
+      }
+      background-color:$colorbgElem;
+      color:$colorElem;
+    }
+
 
   }
 }

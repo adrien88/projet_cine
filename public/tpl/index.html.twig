@@ -1,26 +1,25 @@
 
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{siteLang}}" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>{{ sitetitle }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="public/css/core.css">
   </head>
-  <body>
-
-    {% include 'header.html.twig' ignore missing %}
-
-    <main>
-
-
+  <body id="body" class="container-fluid">
+    <header id="header" class="container-fluid">
+      {% include 'header.html.twig' ignore missing %}
+    </header>
+    <main id="main" class="container-fluid">
         {% include includeContent ignore missing %}
-
-
     </main>
-
-    {% include 'footer.html.twig' ignore missing %}
-
+    <footer id="footer" class="container-fluid">
+      {% include 'footer.html.twig' ignore missing %}
+    </footer>
+    <script src="public/js/core.js">
+    </script>
   </body>
 </html>
