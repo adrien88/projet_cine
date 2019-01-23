@@ -59,6 +59,16 @@ body {
     background-color:$colorbgElem;
     padding:1em;
     color:$colorElem;
+
+    .navbar {
+      background-color: maroon !important;
+      .genre-items{
+        a {
+          color:white;
+        }
+        padding:.5em;
+      }
+    }
   }
 
   footer {

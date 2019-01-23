@@ -12,23 +12,36 @@ foreach($data as $row){
     }
   }
 }
-$tabcontroler = ['films' => $data, 'genres' => $genreList, 'docRoot' => ''];
+$tabcontroler = ['films' => $data, 'genres' => $genreList];
 
+// // Rechercher un film par genre
+  if(
+    isset($_GET['args'][0]) AND
+    $_GET['args'][0] == 'genre'
+  ){
+    if(isset($_GET['args'][1])){
+      $genre = $_GET['args'][1];
+      $retour = $PDO->query("SELECT * FROM films WHERE genre LIKE '%".$genre."%'");
+      $data = $retour->fetchAll();
+      $tabcontroler = ['filmsrecherches' => $data, 'genreRecherche' => $genre];
+    }
+    else{
+      $tabcontroler = ['erreur' => 'Précisez un genre ci dessus.'];
+    }
+  }
 
-if(isset($_GET['args'][0])){
-  // afficher un seul films
-  $film = str_replace('.',' ',$_GET['args'][0]);
-
-  $retour = $PDO->query('SELECT * FROM films WHERE titre = \''.$film.'\'');
-  $data = $retour->fetch();
-  $tabcontroler = ['film' => $data, 'docRoot' => '../'];
-}
-
-// // Rechercher un film
-if(isset($_GET['args'][1])){
-  $genre = $_GET['args'][1];
-
-  $retour = $PDO->query("SELECT * FROM films WHERE genre LIKE '%".$genre."%'");
-  $data = $retour->fetchAll();
-  $tabcontroler = ['filmsrecherches' => $data, 'docRoot' => '../../'];
-}
+// // Rechercher un film par genre
+  if(
+    isset($_GET['args'][0]) AND
+    $_GET['args'][0] == 'film'
+  ){
+    if(isset($_GET['args'][1])){
+      $film = $_GET['args'][1];
+      $retour = $PDO->query('SELECT * FROM films WHERE titre = \''.$film.'\'');
+      $data = $retour->fetch();
+      $tabcontroler = ['film' => $data];
+    }
+    else{
+      $tabcontroler = ['erreur' => 'Précisez un film.'];
+    }
+  }

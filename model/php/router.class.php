@@ -30,6 +30,10 @@ class router {
         $PATH[$lst][]=str_replace('_','.',$part);
       }
     }
+    $PATH['docRoot'] = '';
+    for ($i = 2; $i <= count(explode('/', $str)); $i++ ){
+      $PATH['docRoot'] .= '../';
+    }
     return $PATH;
   }
 

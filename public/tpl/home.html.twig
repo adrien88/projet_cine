@@ -3,62 +3,66 @@
   {% block main %}
 
 
-  {% if genres %}
+    {% if genres %}
 
-    <h2>Rechercher</h2>
+      <h2>Rechercher par thème</h2>
 
-    {% for genre in genres %}
+      <nav class="navbar navbar-light navbar-expand-lg bg-light">
+        <ul class="navbar-nav ">
+      {% for genre in genres %}
+            <li class='nav-item genre-items'>
+              <a href="home/genre/{{genre}}">{{ genre }}</a>
+            </li>
+      {% endfor %}
+        </ul>
+      </nav>
 
-      <a href="./home.html/genre/{{genre}}">
-        {{ genre }}
-      </a>
-
-    {% endfor %}
-  {% endif %}
+    {% endif %}
 
 
 
     {% if films %}
-
       <h2>A l'affiche</h2>
-
-      {% for key,film in films %}
-
-        <a href="./home.html/{{film.titre}}">
-          <h3> {{ film.titre }} </h3>
-          <img src="public/images/{{ film.affiches }}.jpg">
-          <p> {{ film.genre }} </p>
-        </a>
-
-      {% endfor %}
+      <div class="row">
+        {% for key,film in films %}
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <a href="home/film/{{film.titre}}">
+              <h3> {{ film.titre }} </h3>
+              <img class="img-fluid" src="public/images/{{ film.affiches }}.jpg">
+              <p> {{ film.genre }} </p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     {% endif %}
 
 
     {% if film %}
 
-      <h2> {{ film.titre }} </h2>
-      <img src="{{ docRoot }}public/images/{{ film.affiches }}.jpg">
-      <p> {{ film.description }} </p>
-      <p> {{ film.genre }} </p>
+      <div class="col-12">
+        <h2> {{ film.titre }} </h2>
+        <img src="{{ docRoot }}public/images/{{ film.affiches }}.jpg">
+        <p> {{ film.description }} </p>
+        <p> {{ film.genre }} </p>
+      </div>
 
     {% endif %}
 
 
     {% if filmsrecherches %}
 
-        <h2>selecionnés</h2>
-
-        {% for key,film in filmsrecherches %}
-
-          <a href="../{{film.titre}}">
-            <h3> {{ film.titre }} </h3>
-            <img src="{{ docRoot }}public/images/{{ film.affiches }}.jpg">
-            <p> {{ film.genre }} </p>
-          </a>
-
-
-
-        {% endfor %}
+        <h2> >> {{genreRecherche}}</h2>
+        <div class="row">
+          {% for key,film in filmsrecherches %}
+            <div class="col-sm-12 col-md-6 col-lg-3">
+              <a href="../film/{{film.titre}}">
+                <h3> {{ film.titre }} </h3>
+                <img src="{{ docRoot }}public/images/{{ film.affiches }}.jpg">
+                <p> {{ film.genre }} </p>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
 
       {% endif %}
 

@@ -30,6 +30,12 @@ body {
     background-color: white;
     padding: 1em;
     color: #222; }
+    body main .navbar {
+      background-color: maroon !important; }
+      body main .navbar .genre-items {
+        padding: .5em; }
+        body main .navbar .genre-items a {
+          color: white; }
   body footer {
     background-color: white;
     color: #222;
