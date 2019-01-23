@@ -22,6 +22,13 @@ $loader = new Twig_Loader_Filesystem('public/tpl');
 // $twig = new Twig_Environment($loader, ['cache' => 'public/cache']);
 $twig = new Twig_Environment($loader, ['cache' => false]);
 
+$defauttwig = [
+  'siteLang' => $CONFIG['lang'],
+  'sitetitle' => $CONFIG['sitetitle'],
+  'sitedescription' => $CONFIG['sitedescription'],
+  'sitelogo' => 'public/images/logo.svg'
+];
+
 
 // include 'lib/model/php/router.class.php';
 // // Creer le routage
@@ -45,12 +52,11 @@ if(file_exists($callcontroler)){
   include $callcontroler;
 }
 elseif (!file_exists($callhtml)){
+  $tabcontroler = [];
   $callhtml = 'public/tpl/404.html.twig';
 }
 
-echo $twig->render($_GET['page'].'.twig', [
-  'siteLang' => $CONFIG['lang'],
-  'sitetitle' => $CONFIG['sitetitle'],
-  'sitedescription' => $CONFIG['sitedescription'],
-  'sitelogo' => 'public/images/logo.svg'
-]);
+$twigrender = array_merge($defauttwig, $tabcontroler);
+
+// echo '<pre>'.print_r($twigrender,1).'</pre>';
+echo $twig->render($_GET['page'].'.twig', $twigrender);
