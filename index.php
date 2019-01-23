@@ -33,32 +33,26 @@ $loader = new Twig_Loader_Filesystem('public/tpl');
 // $twig = new Twig_Environment($loader, ['cache' => 'public/cache']);
 $twig = new Twig_Environment($loader, ['cache' => false]);
 
-$callcontroler = 'controler/'.str_replace('html','php',$_GET['page']);
-$callhtml = 'public/tpl/'.$_GET['page'].'.twig';
+
 
 if(!isset($_SESSION['id']) && $_GET['page']=='profil.php'){
   header('Location:./home.html');
   exit;
 }
 
+$callcontroler = 'controler/'.str_replace('html','php',$_GET['page']);
+$callhtml = 'public/tpl/'.$_GET['page'].'.twig';
+
 if(file_exists($callcontroler)){
   include $callcontroler;
 }
 elseif (!file_exists($callhtml)){
-  $_GET['page']='404.html';
+  $callhtml = 'public/tpl/404.html.twig';
 }
 
-
-// sitetitle = "Cinéfil'm"
-// sitedescription = "Le site des amoureux du cinoche !"
-// landing = 'home.html'
-// charset = utf8
-// lang = fr
-
-echo $twig->render('index.html.twig', [
+echo $twig->render($_GET['page'].'.twig', [
   'siteLang' => $CONFIG['lang'],
   'sitetitle' => $CONFIG['sitetitle'],
   'sitedescription' => $CONFIG['sitedescription'],
-  'sitelogo' => 'public/images/logo.svg',
-  'includeContent' => $_GET['page'].'.twig'
+  'sitelogo' => 'public/images/logo.svg'
 ]);
