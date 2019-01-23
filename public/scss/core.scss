@@ -60,6 +60,17 @@ body {
     padding:1em;
     color:$colorElem;
 
+    div {
+      margin:.5em;
+      padding:.5em;
+      border: 1px solid gray;
+      border-radius : 1em;
+      img {
+        max-width:150px;
+        max-height:150px;
+      }
+    }
+
     .navbar {
       background-color: maroon !important;
       .genre-items{

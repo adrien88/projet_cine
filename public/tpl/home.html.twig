@@ -26,7 +26,7 @@
       <div class="row">
         {% for key,film in films %}
           <div class="col-sm-12 col-md-6 col-lg-3">
-            <a href="home/film/{{film.titre}}">
+            <a href="home/film/{{film.id }}">
               <h3> {{ film.titre }} </h3>
               <img class="img-fluid" src="public/images/{{ film.affiches }}.jpg">
               <p> {{ film.genre }} </p>
@@ -55,7 +55,7 @@
         <div class="row">
           {% for key,film in filmsrecherches %}
             <div class="col-sm-12 col-md-6 col-lg-3">
-              <a href="../film/{{film.titre}}">
+              <a href="../film/{{ film.id }}">
                 <h3> {{ film.titre }} </h3>
                 <img src="{{ docRoot }}public/images/{{ film.affiches }}.jpg">
                 <p> {{ film.genre }} </p>

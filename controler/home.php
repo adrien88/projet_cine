@@ -37,7 +37,7 @@ $tabcontroler = ['films' => $data, 'genres' => $genreList];
   ){
     if(isset($_GET['args'][1])){
       $film = $_GET['args'][1];
-      $retour = $PDO->query('SELECT * FROM films WHERE titre = \''.$film.'\'');
+      $retour = $PDO->query('SELECT * FROM films WHERE id = \''.$film.'\'');
       $data = $retour->fetch();
       $tabcontroler = ['film' => $data];
     }

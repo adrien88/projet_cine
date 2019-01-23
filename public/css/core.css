@@ -30,6 +30,14 @@ body {
     background-color: white;
     padding: 1em;
     color: #222; }
+    body main div {
+      margin: .5em;
+      padding: .5em;
+      border: 1px solid gray;
+      border-radius: 1em; }
+      body main div img {
+        max-width: 150px;
+        max-height: 150px; }
     body main .navbar {
       background-color: maroon !important; }
       body main .navbar .genre-items {
