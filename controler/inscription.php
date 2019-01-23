@@ -56,7 +56,6 @@
 
     }
 
-echo $twig->render('inscription.html.twig', array('pseudo' => '', 'email' => '', 'password' => '', 'erreur' => ''));
-
+$tabcontroler = [];
 
 ?>

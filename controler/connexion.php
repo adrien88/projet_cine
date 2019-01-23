@@ -17,7 +17,7 @@ if(isset($_POST) and !empty($_POST)) {
          $_SESSION['email'] = $userinfo['email'];
          header('Location: profil.php');
          exit;
-         
+
       } else {
          $erreur = "Mauvais mail ou mot de passe.";
       }
@@ -25,4 +25,8 @@ if(isset($_POST) and !empty($_POST)) {
       $erreur = "L'utilisateur existe déja.";
    }
 }
+
+$tabcontroler = [];
+
+
 ?>
