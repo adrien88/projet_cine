@@ -4,8 +4,7 @@
     BARRE DE NAVIGATION
   -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-lg bg-light fixed-top d-flex justify-content-between">
-
-    <a class="navbar-brand" href="#"><img src="{{ sitelogo }}" alt="{{ sitetitle }} logo"></a>
+    <a class="navbar-brand" href="./{{ docRoot }}"><img src="{{ sitelogo }}" alt="{{ sitetitle }} logo"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -22,12 +21,16 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Login
+            Logged as <b>{{ compteId }}</b>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="connexion">login</a>
-            <a class="dropdown-item" href="inscription">create account</a>
-
+            {% if compteId == 'guest' %}
+              <a class="dropdown-item" href="connexion">login</a>
+              <a class="dropdown-item" href="inscription">create account</a>
+            {% else %}
+              <a class="dropdown-item" href="profil">Mon compte</a>
+              <a class="dropdown-item" href="deconnexion">Déconnexion</a>
+            {% endif %}
             </div>
           </li>
 
