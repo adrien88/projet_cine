@@ -12,20 +12,9 @@ spl_autoload_register(function ($class) {
 });
 
 session_start();
+
 // Import PHP PDO
 require_once 'model/php/pdo.php';
-
-// include 'lib/model/php/router.class.php';
-// // Creer le routage
-$landingDefaut=$CONFIG['landing'];
-$getStruct = ['page','args'];
-
-//  : effecer arg array si vide et passer merge $_GET DANS la métrhode auto et faire disparare GET[0]
-$_GET=router::auto($landingDefaut,$getStruct);
-// echo '$_GET <br><pre> '.print_r($_GET,1).'</pre>';
-
-// $_GET['page']='home.html';
-
 
 // inlude twig
 require_once 'vendor/autoload.php';
@@ -34,11 +23,20 @@ $loader = new Twig_Loader_Filesystem('public/tpl');
 $twig = new Twig_Environment($loader, ['cache' => false]);
 
 
+// include 'lib/model/php/router.class.php';
+// // Creer le routage
+$landingDefaut=$CONFIG['landing'];
+$getStruct = ['page','args'];
+//  : effecer arg array si vide et passer merge $_GET DANS la métrhode auto et faire disparare GET[0]
+$_GET=router::auto($landingDefaut,$getStruct);
+// echo '$_GET <br><pre> '.print_r($_GET,1).'</pre>';
+// $_GET['page']='home.html';
 
 if(!isset($_SESSION['id']) && $_GET['page']=='profil.php'){
   header('Location:./home.html');
   exit;
 }
+
 
 $callcontroler = 'controler/'.str_replace('html','php',$_GET['page']);
 $callhtml = 'public/tpl/'.$_GET['page'].'.twig';
