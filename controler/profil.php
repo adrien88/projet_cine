@@ -9,60 +9,60 @@ if(isset($_SESSION['id']) AND $_SESSION['id'] > 0) {
    $requser->execute(array($getid));
    $userinfo = $requser->fetch();
 
-   echo $twig->render('profil.html.twig', array('id' => 'id', 'pseudo' => 'pseudo', 'email' => 'mail1', 'password' => 'mdp1'));
+   echo $twig->render('profil.html.twig', array('id' => '', 'pseudo' => '', 'email' => '', 'password' => ''));
 }
 
 // verif formulaire soumission de films
 if(isset($_POST) and !empty($_POST)){
-   $titre = ($_POST['titre']);
-   $annee = ($_POST['annee']);
-   $genre = ($_POST['genre']);
-   $acteurs = ($_POST['acteurs']);
-   $realisateurs = ($_POST['realisateurs']);
-   $description = ($_POST['description']);
-   $errorMsg = "";
+  $titre = ($_POST['titre']);
+  $annee = ($_POST['annee']);
+  $genre = ($_POST['genre']);
+  $acteurs = ($_POST['acteurs']);
+  $realisateurs = ($_POST['realisateurs']);
+  $description = ($_POST['description']);
+  $errorMsg = "";
 
-      if(!empty($titre) AND !empty($annee) AND !empty($genre) AND !empty($acteurs) AND !empty($realisateurs) AND !empty($description)) {
+  if(!empty($titre) AND !empty($annee) AND !empty($genre) AND !empty($acteurs) AND !empty($realisateurs) AND !empty($description)) {
 
-   //titre
-   if (preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï])+?$#", $titre)) {
-   } else {
-      $errorMsg = '<li>Nom incorrect</li>';
-   }
+     //titre
+     if (preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï])+?$#", $titre)) {
+     } else {
+        $errorMsg = '<li>Nom incorrect</li>';
+     }
 
-   // année
-   if (preg_match("#^[0-9]{4}$#", $annee)) {
-   } else {
-      $errorMsg .= '<li>Date incorrecte (format AAAA)</li>';
-   }
+     // année
+     if (preg_match("#^[0-9]{4}$#", $annee)) {
+     } else {
+        $errorMsg .= '<li>Date incorrecte (format AAAA)</li>';
+     }
 
-   //genre
-   foreach($genre as $valeur)
-   {
-      echo "La checkbox $valeur a été cochée<br>";
-   }
-   if(!$genre){
-      echo "Aucune checkbox n'a été cochée";
-   }
+     //genre
+     foreach($genre as $valeur)
+     {
+        echo "La checkbox $valeur a été cochée<br>";
+     }
+     if(!$genre){
+        echo "Aucune checkbox n'a été cochée";
+     }
 
-   //acteurs
-   if (preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#", $acteurs)){
+     //acteurs
+     if (preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#", $acteurs)){
 
-   } else {
-      $errorMsg .= '<li>Nom incorrect</li>';
-   }
-   print_r($_POST);
-   // réalisateurs
-   if (preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#", $realisateurs)){
-   } else {
-      $errorMsg .= '<li>Nom incorrect</li>';
-   }
+     } else {
+        $errorMsg .= '<li>Nom incorrect</li>';
+     }
+     print_r($_POST);
+     // réalisateurs
+     if (preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#", $realisateurs)){
+     } else {
+        $errorMsg .= '<li>Nom incorrect</li>';
+     }
 
-   // commentaires
-   if (!empty($description)) {}
-      else {
-      $errorMsg .= "<li>Ce champ doit être rempli</li>";
-   }
+     // commentaires
+     if (!empty($description)) {}
+        else {
+        $errorMsg .= "<li>Ce champ doit être rempli</li>";
+     }
    // ok verif
    }
 
