@@ -1,105 +1,124 @@
-    $fonttitle: 0;
-    $fonttext: 0;
-    $colorbgbody: gray;
-    $colorbgElem: gray;
-    $primarycolor: #f96167;
-    $secondarycolor: #fce77d;
-    $colorElem: #222;
+    $primarycolor: black;
+    $secondarycolor: rgb(238, 43, 46);
+    $popcorn: rgb(255, 250, 233);
     body {
-        // get all width of screen
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-        h1 {
-            font-size: 2.5em;
+        background-color: $primarycolor;
+        font-family: 'Permanent Marker', cursive;
+        nav {
+            height: 150px;
+            background-color: $primarycolor;
+            font-size: 1.5em;
+            #titres {
+                color: $popcorn;
+                z-index: 5;
+                text-align: center;
+                h1 {
+                    font-size: 3em;
+                    text-shadow: 1px 2px 2px grey;
+                }
+            }
+            input {
+                height: 50px;
+                background-color: transparent;
+                width: 70%;
+                border: 2px solid $secondarycolor;
+                border-radius: 5px;
+            }
+            i {
+                color: $secondarycolor;
+                font-size: 3em;
+            }
+            input::placeholder {
+                color: $secondarycolor;
+                opacity: 0.5;
+            }
+            .navbar-toggler-icon {
+                background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
+                color: $secondarycolor;
+                background-color: $popcorn;
+            }
+            a {
+                color: $secondarycolor;
+                font-weight: 500;
+            }
+            a:hover {
+                border: 2px $secondarycolor solid;
+                color: $secondarycolor;
+                background-color: transparent;
+            }
         }
-        h2 {
-            font-size: 1.4em;
-        }
-        h3 {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        h4 {
-            font-size: 1.1em;
-        }
-        background-color:$secondarycolor;
-        header {
-            padding: 1em;
-            background-color: $secondarycolor;
-            nav#navbar {
-                background-color: maroon !important;
-                color: white !important;
-                a,
-                button,
-                input {
-                    color: white !important;
-                    background-color: maroon !important;
-                    border-color: white !important;
-                    &:hover {
-                        color: white !important;
-                        background-color: maroon !important;
-                        border-color: white !important;
+        #header {
+            margin-top: 160px;
+            #rowtitre {
+                #titres {
+                    color: $popcorn;
+                    z-index: 5;
+                    text-align: center;
+                    h2 {
+                        font-size: 2em;
+                        text-shadow: 1px 2px 2px black;
                     }
                 }
             }
-            #titres {
-                position: absolute;
-                font-size: 5em;
-                color: $primarycolor;
-                z-index: 5;
-                text-align: center;
-                justify-content: center;
-                align-content: center;
-                #myCarousel {
-                    height: 20%;
-                    h2 {
-                        font-size: 1em;
-                        color: $primarycolor !important;
-                    }
-                }
-                .carousel-indicators {
-                    margin-bottom: 15px;
-                    color: $secondarycolor;
-                }
-                .carousel-inner {
-                    .carousel-item {
-                        .carousel-caption {
-                            position: absolute;
-                            margin-top: 80px;
-                            color: $secondarycolor;
-                            font-size: 2em;
-                            h3 {
-                                font-size: 2em;
-                            }
+            .carousel-indicators {
+                //margin-bottom: 15px;
+                color: $secondarycolor;
+            }
+            .carousel-inner {
+                .carousel-item {
+                    height: 500px;
+                    position: relative;
+                    .carousel-caption {
+                        background-color: rgba(0, 0, 0, 0.5);
+                        color: $popcorn;
+                        text-shadow: 1px 2px 2px black;
+                        font-size: 1.5em;
+                        h3 {
+                            font-size: 2.5em;
                         }
                     }
                 }
             }
         }
-        main {
-            background-color: $secondarycolor;
-            padding: 1em;
-            color: $colorElem;
-        }
         footer {
             background-color: $primarycolor;
             color: $secondarycolor;
             padding: 1em;
+            width: 100%;
             #footer-title {
                 text-align: center;
+                margin-top: -20px;
+                font-size: 1em;
+            }
+            input::placeholder {
+                color: $secondarycolor;
+                opacity: 0.5;
+            }
+            input {
+                 :hover {
+                    background-color: transparent;
+                    border: none;
+                }
+                input {
+                     :active {
+                        color: $secondarycolor;
+                    }
+                }
             }
             #newsletter {
-                background-color: transparent;
-                color: $secondarycolor;
                 border: 2px solid $secondarycolor;
+                border-radius: 5px;
                 padding: 5px;
+                width: 80%;
+                height: 50px;
+                background-color: transparent;
+                font-size: 1.5em;
             }
             #btnnews {
                 background-color: transparent;
                 color: $secondarycolor;
                 border-color: transparent;
                 font-size: 3em;
-                margin-top: -10
             }
             li {
                 list-style: none;
@@ -109,6 +128,13 @@
                 i {
                     color: $secondarycolor;
                 }
+            }
+            a {
+                color: $secondarycolor;
+            }
+            a:hover {
+                color: $secondarycolor;
+                text-transform: none;
             }
         }
     }

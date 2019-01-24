@@ -1,34 +1,39 @@
-<div class="row">
+<footer>
+    <div class="container-fluid">
+        <div class="row">
 
-    <div id="footer-title" class="col-12">
-        CAFE LATTE © 2019
+            <div class="col-12">
+                <p id="footer-title">CAFE LATTE © 2019</p>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-4">
+                <h2>Retrouvez-nous</h2>
+                <ul>
+                    <li><a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a href="https://www.twitter.com"><i class="fab fa-twitter-square"></i></a></li>
+                    <li><a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-5">
+                <h2>Newsletter</h2>
+                <form method="post" action="{{ docRoot }}newsletter">
+                    <input id="newsletter" type="email" name="email" placeholder="nom@email.fr">
+                    <button id="btnnews" type="submit"><i class="fas fa-envelope-square"></i></button>
+                </form>
+            </div>
+
+            <div class="col-3">
+                <h2>A propos</h2>
+                <p><a href="{{ docRoot }}conditions">Conditions générales</a></p>
+                <p><a href="{{ docRoot }}mentions">Mentions légales</a></p>
+            </div>
+
+        </div>
     </div>
-
-</div>
-
-<div class="row">
-
-    <div class="col-4">
-        <h2>Retrouvez-nous</h2>
-        <ul>
-            <li><a href="https://facebook.com"><i class="fab fa-facebook-square"></i></a></li>
-            <li><a href="https://twitter.com"><i class="fab fa-twitter-square"></i></a></li>
-            <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a></li>
-        </ul>
-    </div>
-
-    <div class="col-4">
-        <h2>Newsletter</h2>
-        <form method="post" action="newsletter.html">
-            <input id="newsletter" type="email" name="email" placeholder="nom@email.fr">
-            <button id="btnnews" type="submit"><i class="fas fa-envelope-square"></i></button>
-        </form>
-    </div>
-
-    <div class="col-4">
-        <h2>A propos</h2>
-        <p>Abeas corpus est touti fruti. Sic transit gloria mundi. Nunc est bibendum.</p>
-        <p>Ils mangèrent des agneaux, des orangs outang. Et le seigneur fut content</p>
-    </div>
-
-</div>
+</footer>

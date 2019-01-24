@@ -1,97 +1,114 @@
 body {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-  background-color: #fce77d;
+  background-color: black;
+  font-family: "Permanent Marker", cursive;
 }
-body h1 {
-  font-size: 2.5em;
+body nav {
+  height: 150px;
+  background-color: black;
+  font-size: 1.5em;
 }
-body h2 {
-  font-size: 1.4em;
-}
-body h3 {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-body h4 {
-  font-size: 1.1em;
-}
-body header {
-  padding: 1em;
-  background-color: #fce77d;
-}
-body header nav#navbar {
-  background-color: maroon !important;
-  color: white !important;
-}
-body header nav#navbar a,
-body header nav#navbar button,
-body header nav#navbar input {
-  color: white !important;
-  background-color: maroon !important;
-  border-color: white !important;
-}
-body header nav#navbar a:hover,
-body header nav#navbar button:hover,
-body header nav#navbar input:hover {
-  color: white !important;
-  background-color: maroon !important;
-  border-color: white !important;
-}
-body header #titres {
-  position: absolute;
-  font-size: 5em;
-  color: #f96167;
+body nav #titres {
+  color: #fffae9;
   z-index: 5;
   text-align: center;
-  justify-content: center;
-  align-content: center;
 }
-body header #titres #myCarousel {
-  height: 20%;
+body nav #titres h1 {
+  font-size: 3em;
+  text-shadow: 1px 2px 2px grey;
 }
-body header #titres #myCarousel h2 {
-  font-size: 1em;
-  color: #f96167 !important;
+body nav input {
+  height: 50px;
+  background-color: transparent;
+  width: 70%;
+  border: 2px solid #ee2b2e;
+  border-radius: 5px;
 }
-body header #titres .carousel-indicators {
-  margin-bottom: 15px;
-  color: #fce77d;
+body nav i {
+  color: #ee2b2e;
+  font-size: 3em;
 }
-body header #titres .carousel-inner .carousel-item .carousel-caption {
-  position: absolute;
-  margin-top: 80px;
-  color: #fce77d;
+body nav input::placeholder {
+  color: #ee2b2e;
+  opacity: 0.5;
+}
+body nav .navbar-toggler-icon {
+  background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
+  color: #ee2b2e;
+  background-color: #fffae9;
+}
+body nav a {
+  color: #ee2b2e;
+  font-weight: 500;
+}
+body nav a:hover {
+  border: 2px #ee2b2e solid;
+  color: #ee2b2e;
+  background-color: transparent;
+}
+body #header {
+  margin-top: 160px;
+}
+body #header #rowtitre #titres {
+  color: #fffae9;
+  z-index: 5;
+  text-align: center;
+}
+body #header #rowtitre #titres h2 {
   font-size: 2em;
+  text-shadow: 1px 2px 2px black;
 }
-body header #titres .carousel-inner .carousel-item .carousel-caption h3 {
-  font-size: 2em;
+body #header .carousel-indicators {
+  color: #ee2b2e;
 }
-body main {
-  background-color: #fce77d;
-  padding: 1em;
-  color: #222;
+body #header .carousel-inner .carousel-item {
+  height: 500px;
+  position: relative;
+}
+body #header .carousel-inner .carousel-item .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fffae9;
+  text-shadow: 1px 2px 2px black;
+  font-size: 1.5em;
+}
+body #header .carousel-inner .carousel-item .carousel-caption h3 {
+  font-size: 2.5em;
 }
 body footer {
-  background-color: #f96167;
-  color: #fce77d;
+  background-color: black;
+  color: #ee2b2e;
   padding: 1em;
+  width: 100%;
 }
 body footer #footer-title {
   text-align: center;
+  margin-top: -20px;
+  font-size: 1em;
+}
+body footer input::placeholder {
+  color: #ee2b2e;
+  opacity: 0.5;
+}
+body footer input :hover {
+  background-color: transparent;
+  border: none;
+}
+body footer input input :active {
+  color: #ee2b2e;
 }
 body footer #newsletter {
-  background-color: transparent;
-  color: #fce77d;
-  border: 2px solid #fce77d;
+  border: 2px solid #ee2b2e;
+  border-radius: 5px;
   padding: 5px;
+  width: 80%;
+  height: 50px;
+  background-color: transparent;
+  font-size: 1.5em;
 }
 body footer #btnnews {
   background-color: transparent;
-  color: #fce77d;
+  color: #ee2b2e;
   border-color: transparent;
   font-size: 3em;
-  margin-top: -10;
 }
 body footer li {
   list-style: none;
@@ -100,7 +117,14 @@ body footer li {
   margin: 5px;
 }
 body footer li i {
-  color: #fce77d;
+  color: #ee2b2e;
+}
+body footer a {
+  color: #ee2b2e;
+}
+body footer a:hover {
+  color: #ee2b2e;
+  text-transform: none;
 }
 
 /*# sourceMappingURL=core.css.map */
