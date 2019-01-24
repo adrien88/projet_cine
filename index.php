@@ -74,6 +74,7 @@ $defauttwig = [
 */
 $callcontroler = 'controler/'.$_GET['page'].'.php';
 $callhtml = 'public/tpl/'.$_GET['page'].'.html.twig';
+$tabcontroler = [];
 
 /*
     Import controller (if exist)
@@ -85,7 +86,6 @@ if(file_exists($callcontroler)){
     Import 404 cause nothing exist
 */
 elseif (!file_exists($callhtml)){
-  $tabcontroler = [];
   $callhtml = 'public/tpl/404.html.twig';
 }
 
