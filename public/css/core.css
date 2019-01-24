@@ -1,48 +1,106 @@
 body {
   padding-left: 0px !important;
   padding-right: 0px !important;
-  background-color: gray; }
-  body h1 {
-    font-size: 2.5em; }
-  body h2 {
-    font-size: 1.4em; }
-  body h3 {
-    font-size: 1.2em;
-    font-weight: bold; }
-  body h4 {
-    font-size: 1.1em; }
-  body header {
-    padding: 1em;
-    background-color: white;
-    color: #222; }
-    body header nav#navbar {
-      background-color: maroon !important;
-      color: white !important; }
-      body header nav#navbar a, body header nav#navbar button, body header nav#navbar input {
-        color: white !important;
-        background-color: maroon !important;
-        border-color: white !important; }
-        body header nav#navbar a:hover, body header nav#navbar button:hover, body header nav#navbar input:hover {
-          color: white !important;
-          background-color: maroon !important;
-          border-color: white !important; }
-  body main {
-    background-color: white;
-    padding: 1em;
-    color: #222; }
-  body footer {
-    background-color: white;
-    color: #222;
-    padding: 1em; }
-    body footer div {
-      background-color: white;
-      color: #222; }
-      body footer div:first-child div#footer-title {
-        padding: .5em;
-        background-color: maroon;
-        color: white;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: .25em; }
+  background-color: #fce77d;
+}
+body h1 {
+  font-size: 2.5em;
+}
+body h2 {
+  font-size: 1.4em;
+}
+body h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+body h4 {
+  font-size: 1.1em;
+}
+body header {
+  padding: 1em;
+  background-color: #fce77d;
+}
+body header nav#navbar {
+  background-color: maroon !important;
+  color: white !important;
+}
+body header nav#navbar a,
+body header nav#navbar button,
+body header nav#navbar input {
+  color: white !important;
+  background-color: maroon !important;
+  border-color: white !important;
+}
+body header nav#navbar a:hover,
+body header nav#navbar button:hover,
+body header nav#navbar input:hover {
+  color: white !important;
+  background-color: maroon !important;
+  border-color: white !important;
+}
+body header #titres {
+  position: absolute;
+  font-size: 5em;
+  color: #f96167;
+  z-index: 5;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+body header #titres #myCarousel {
+  height: 20%;
+}
+body header #titres #myCarousel h2 {
+  font-size: 1em;
+  color: #f96167 !important;
+}
+body header #titres .carousel-indicators {
+  margin-bottom: 15px;
+  color: #fce77d;
+}
+body header #titres .carousel-inner .carousel-item .carousel-caption {
+  position: absolute;
+  margin-top: 80px;
+  color: #fce77d;
+  font-size: 2em;
+}
+body header #titres .carousel-inner .carousel-item .carousel-caption h3 {
+  font-size: 2em;
+}
+body main {
+  background-color: #fce77d;
+  padding: 1em;
+  color: #222;
+}
+body footer {
+  background-color: #f96167;
+  color: #fce77d;
+  padding: 1em;
+}
+body footer #footer-title {
+  text-align: center;
+}
+body footer #newsletter {
+  background-color: transparent;
+  color: #fce77d;
+  border: 2px solid #fce77d;
+  padding: 5px;
+}
+body footer #btnnews {
+  background-color: transparent;
+  color: #fce77d;
+  border-color: transparent;
+  font-size: 3em;
+  margin-top: -10;
+}
+body footer li {
+  list-style: none;
+  font-size: 3em;
+  display: inline;
+  margin: 5px;
+}
+body footer li i {
+  color: #fce77d;
+}
 
 /*# sourceMappingURL=core.css.map */

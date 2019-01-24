@@ -1,86 +1,114 @@
-
-
-$fonttitle : 0 ;
-$fonttext : 0 ;
-
-$colorbgbody : gray;
-$colorbody : gray;
-
-$colorbgElem : white;
-$colorElem : #222;
-
-
-body {
-  // get all width of screen
-  padding-left:0px !important;
-  padding-right:0px !important;
-
-  h1 {
-    font-size:2.5em;
-  }
-  h2 {
-    font-size:1.4em;
-  }
-  h3 {
-    font-size:1.2em;
-    font-weight:bold;
-  }
-  h4 {
-    font-size:1.1em;
-  }
-
-
-  background-color:$colorbgbody;
-
-  header {
-    padding:1em;
-    background-color:$colorbgElem;
-    color:$colorElem;
-
-    nav#navbar{
-      background-color:maroon !important;
-      color:white !important;
-
-      a, button, input {
-        color:white !important;
-        background-color:maroon !important;
-        border-color:white !important;
-        &:hover{
-          color:white !important;
-          background-color:maroon !important;
-          border-color:white !important;
-
+    $fonttitle: 0;
+    $fonttext: 0;
+    $colorbgbody: gray;
+    $colorbgElem: gray;
+    $primarycolor: #f96167;
+    $secondarycolor: #fce77d;
+    $colorElem: #222;
+    body {
+        // get all width of screen
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        h1 {
+            font-size: 2.5em;
         }
-      }
-    }
-  }
-
-  main {
-    background-color:$colorbgElem;
-    padding:1em;
-    color:$colorElem;
-  }
-
-  footer {
-    background-color:$colorbgElem;
-    color:$colorElem;
-    padding:1em;
-
-    div {
-      &:first-child {
-        div#footer-title {
-          padding:.5em;
-          background-color:maroon;
-          color:white;
-          text-align:center;
-          text-transform: uppercase;
-          letter-spacing: .25em;
+        h2 {
+            font-size: 1.4em;
         }
-      }
-      background-color:$colorbgElem;
-      color:$colorElem;
+        h3 {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        h4 {
+            font-size: 1.1em;
+        }
+        background-color:$secondarycolor;
+        header {
+            padding: 1em;
+            background-color: $secondarycolor;
+            nav#navbar {
+                background-color: maroon !important;
+                color: white !important;
+                a,
+                button,
+                input {
+                    color: white !important;
+                    background-color: maroon !important;
+                    border-color: white !important;
+                    &:hover {
+                        color: white !important;
+                        background-color: maroon !important;
+                        border-color: white !important;
+                    }
+                }
+            }
+            #titres {
+                position: absolute;
+                font-size: 5em;
+                color: $primarycolor;
+                z-index: 5;
+                text-align: center;
+                justify-content: center;
+                align-content: center;
+                #myCarousel {
+                    height: 20%;
+                    h2 {
+                        font-size: 1em;
+                        color: $primarycolor !important;
+                    }
+                }
+                .carousel-indicators {
+                    margin-bottom: 15px;
+                    color: $secondarycolor;
+                }
+                .carousel-inner {
+                    .carousel-item {
+                        .carousel-caption {
+                            position: absolute;
+                            margin-top: 80px;
+                            color: $secondarycolor;
+                            font-size: 2em;
+                            h3 {
+                                font-size: 2em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        main {
+            background-color: $secondarycolor;
+            padding: 1em;
+            color: $colorElem;
+        }
+        footer {
+            background-color: $primarycolor;
+            color: $secondarycolor;
+            padding: 1em;
+            #footer-title {
+                text-align: center;
+            }
+            #newsletter {
+                background-color: transparent;
+                color: $secondarycolor;
+                border: 2px solid $secondarycolor;
+                padding: 5px;
+            }
+            #btnnews {
+                background-color: transparent;
+                color: $secondarycolor;
+                border-color: transparent;
+                font-size: 3em;
+                margin-top: -10
+            }
+            li {
+                list-style: none;
+                font-size: 3em;
+                display: inline;
+                margin: 5px;
+                i {
+                    color: $secondarycolor;
+                }
+            }
+        }
     }
-
-
-  }
-}
