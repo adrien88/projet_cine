@@ -7,13 +7,16 @@
       <form method="POST" action="" enctype="multipart/form-data">
 
           <div class="row">
+            <div class="col-12">
+              {{ erreur }}
+            </div>
               <div class="col-6">
                   <label>Pseudo :</label><br>
-                  <input type="text" name="newpseudo" placeholder="Pseudo" value="{{user.pseudo}}" />
+                  <input type="text" name="newpseudo" placeholder="Pseudo" value="{{userinfo.pseudo}}" />
               </div>
               <div class="col-6">
                   <label>Mail :</label><br>
-                  <input type="text" name="newmail" placeholder="Mail" value="{{user.mail1}}" />
+                  <input type="text" name="newmail" placeholder="Mail" value="{{userinfo.email}}" />
               </div>
               <div class="row"></div>
               <div class="col-6">
@@ -27,7 +30,6 @@
               <input type="submit" value="Mettre à jour mon profil !" />
           </div>
       </form>
-      {#{%  if msg is defined %} {{ msg }} {% else header "connexion.php" %} {% endif %}#}
 
     </div>
 {% endblock %}
