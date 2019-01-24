@@ -30,5 +30,6 @@ if(isset($_SESSION['id'])) {
      }
   }
 }
-echo $twig->render('edition_profil.html.twig', ['pseudo' => 'pseudo', 'email' => 'mail1', 'password' => 'mdp1']);
+
+$tabcontroler = [];
 ?>

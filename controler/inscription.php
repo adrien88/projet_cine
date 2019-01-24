@@ -1,18 +1,20 @@
 <?php
 
+    $erreur='';
 
     if(isset($_POST) and !empty($_POST)){//l'utilisateur a cliqué sur "S'inscrire", on demande donc si les champs sont définis avec "isset"
 
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $mail1 = htmlspecialchars($_POST['mail1']);
     $mail2 = htmlspecialchars($_POST['mail2']);
-    $mdp1 = sha1($_POST['mdp1']);
-    $mdp2 = sha1($_POST['mdp2']);
+    $mdp1 = $_POST['mdp1'];
+    $mdp2 = $_POST['mdp2'];
     print_r($_POST);
 
     if(!empty($pseudo) AND !empty($mail1) AND !empty($mail2) AND !empty($mdp1) AND !empty($mdp2)) {
-        $pseudolength = strlen($pseudo);
-        $requser = $PDO->prepare("SELECT * FROM user WHERE pseudo = ?"); //vérifier si l'user existe bien
+
+      $pseudolength = strlen($pseudo);
+      $requser = $PDO->prepare("SELECT * FROM user WHERE pseudo = ?"); //vérifier si l'user existe bien
       $requser->execute(array($pseudo));
       $userexist = $requser->rowCount();
         $messageerror = $requser->errorInfo()[2]; //evite pseudo doublé (index unique)
@@ -25,6 +27,7 @@
                  $mailexist = $reqmail->rowCount();
                  if($mailexist == 0) {
                     if($mdp1 == $mdp2) {
+                       $mdp1=crypt($mdp1,md5($mail1));
                        $insertmbr = $PDO->prepare("INSERT INTO user(pseudo, email, password) VALUES(?, ?, ?)");
                        $insertmbr->execute(array($pseudo, $mail1, $mdp1));
                        $erreur = "Votre compte a bien été créé !";
@@ -56,7 +59,6 @@
 
     }
 
-echo $twig->render('inscription.html.twig', array('pseudo' => '', 'email' => '', 'password' => '', 'erreur' => ''));
-
+    $tabcontroler = ['erreur'=>$erreur];
 
 ?>

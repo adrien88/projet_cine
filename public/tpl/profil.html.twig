@@ -1,110 +1,93 @@
+{% extends "modelspages/index.html.twig" %}
+{% block main %}
 
-<head>
-    <title>Espace membre</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <section class="container">
+      <h2>PROFIL DE {{ userinfo.pseudo }}</h2>
+      <p>Pseudo = {{ userinfo.pseudo }}</p>
+      <p>Mail = {{ userinfo.mail1 }}</p>
 
-</head>
+      <!--<?php
+   if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {}
+   ?> --------------------------------------- A TRADUIRE EN TWIG -->
+      {#{%if session.id is defined and userinfo.id is same as session.id%}{%endif%}#}
 
-<body>
-    <header></header>
-    <main class="container-fluid">
-        <section class="container">
-            <h2>PROFIL DE {{ userinfo.pseudo }}</h2>
-            <p>Pseudo = {{ userinfo.pseudo }}</p>
-            <p>Mail = {{ userinfo.mail1 }}</p>
+      <button><a href="edition_profil.php">Editer mon profil</a></button>
+      <button><a href="deconnexion.php">Se déconnecter</a></button>
+  </section>
 
-            <!--<?php
-         if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {}
-         ?> --------------------------------------- A TRADUIRE EN TWIG -->
-            {#{%if session.id is defined and userinfo.id is same as session.id%}{%endif%}#}
+  <section class="container">
+      <div class="row">
+          <div class="col-6">
+              <h3>Mes films :</h3>
+              <!-----------faire s'afficher les films soumis------------->
+              <img src="../../upload {{ data }}">
 
-            <button><a href="edition_profil.php">Editer mon profil</a></button>
-            <button><a href="deconnexion.php">Se déconnecter</a></button>
-        </section>
+          </div>
+          <div class="col-6">
+              <h3>Je propose un film :</h3>
+              <p>Tous les champs sont obligatoires</p>
+              <form method="post" action="profil.php" enctype="multipart/form-data">
+                  <label>Titre du film</label><br>
+                  <input type="text" name="titre" minlenght="2" maxlength="30" required><br>
 
-        <section class="container">
-            <div class="row">
-                <div class="col-6">
-                    <h3>Mes films :</h3>
-                    <!-----------faire s'afficher les films soumis------------->
-                    <img src="../../upload {{ data }}">
+                  <label>Date de sortie</label><br>
+                  <input type="text" name="annee" minlenght="4" maxlength="4" required><br>
 
-                </div>
-                <div class="col-6">
-                    <h3>Je propose un film :</h3>
-                    <p>Tous les champs sont obligatoires</p>
-                    <form method="post" action="profil.php" enctype="multipart/form-data">
-                        <label>Titre du film</label><br>
-                        <input type="text" name="titre" minlenght="2" maxlength="30" required><br>
+                  <fieldset>
+                      <legend>Genre :</legend>
+                      <div>
+                          <input type="checkbox" name="genre[]" value="action">
+                          <label for="action">Action</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" name="genre[]" value="aventure">
+                          <label for="aventure">Aventure</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" name="genre[]" value="animation">
+                          <label for="animation">Animation</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" name="genre[]" value="Comédie">
+                          <label for="comedie">Comédie</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" name="genre[]" value="drame">
+                          <label for="drame">Drame</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" name="genre[]" value="horreur">
+                          <label for="horreur">Horreur</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" name="genre[]" value="policier">
+                          <label for="policier">Policier</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" name="genre[]" value="sf">
+                          <label for="sf">Science-fiction</label>
+                      </div>
+                      <div>
+                          <input type="checkbox" name="genre[]" value="thriller">
+                          <label for="thriller">Thriller</label>
+                      </div>
+                  </fieldset>
 
-                        <label>Date de sortie</label><br>
-                        <input type="text" name="annee" minlenght="4" maxlength="4" required><br>
+                  <label>Acteur(s)</label><br>
+                  <input type="text" name="acteurs" id="acteurs" minlength="10" maxlength="100" required><br>
 
-                        <fieldset>
-                            <legend>Genre :</legend>
-                            <div>
-                                <input type="checkbox" name="genre[]" value="action">
-                                <label for="action">Action</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="genre[]" value="aventure">
-                                <label for="aventure">Aventure</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="genre[]" value="animation">
-                                <label for="animation">Animation</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="genre[]" value="Comédie">
-                                <label for="comedie">Comédie</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="genre[]" value="drame">
-                                <label for="drame">Drame</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="genre[]" value="horreur">
-                                <label for="horreur">Horreur</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="genre[]" value="policier">
-                                <label for="policier">Policier</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="genre[]" value="sf">
-                                <label for="sf">Science-fiction</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="genre[]" value="thriller">
-                                <label for="thriller">Thriller</label>
-                            </div>
-                        </fieldset>
+                  <label>Réalisateur(s)</label><br>
+                  <input type="text" name="realisateurs" id="realisateurs" minlength="10" maxlength="100" required><br>
 
-                        <label>Acteur(s)</label><br>
-                        <input type="text" name="acteurs" id="acteurs" minlength="10" maxlength="100" required><br>
+                  <label>Description courte</label><br>
+                  <textarea id="description" name="description" minlength="10" maxlength="1000" required></textarea><br>
 
-                        <label>Réalisateur(s)</label><br>
-                        <input type="text" name="realisateurs" id="realisateurs" minlength="10" maxlength="100" required><br>
+                  <label>Insérez l'affiche du film</label><br>
+                  <input type="file" name="affiche" required><br>
 
-                        <label>Description courte</label><br>
-                        <textarea id="description" name="description" minlength="10" maxlength="1000" required></textarea><br>
-
-                        <label>Insérez l'affiche du film</label><br>
-                        <input type="file" name="affiche" required><br>
-
-                        <input type="submit" id="btn" value="Soumettre"> {%if msgerror is defined%} {{ msgerror }} {%endif%}
-                </div>
-            </div>
-            </form>
-        </section>
-    </main>
-    <footer></footer>
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-</body>
-
-</html>
+                  <input type="submit" id="btn" value="Soumettre"> {%if msgerror is defined%} {{ msgerror }} {%endif%}
+          </div>
+      </div>
+      </form>
+  </section>
+  {% endblock %}

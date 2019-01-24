@@ -3,54 +3,99 @@
 //  display errors
 ini_set('display_errors','1');
 
-// load config
+
+/*
+    load config
+*/
 $CONFIG = parse_ini_file('config.ini',1)['site'];
 
-// chargement automatique des class
+/*
+    Autoloading of PHP class
+*/
 spl_autoload_register(function ($class) {
     include 'model/php/'.$class.'.class.php';
 });
 
+/*
+    start session
+*/
 session_start();
 
-// Import PHP PDO
+/*
+    Import PDO
+*/
 require_once 'model/php/pdo.php';
 
-// include twig
+/*
+    Include TWIG, Create a TWIG Environement
+*/
 require_once 'vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem('public/tpl');
 // $twig = new Twig_Environment($loader, ['cache' => 'public/cache']);
 $twig = new Twig_Environment($loader, ['cache' => false]);
 
-
-// include 'lib/model/php/router.class.php';
-// // Creer le routage
+/*
+    Creer le routage
+*/
 $landingDefaut=$CONFIG['landing'];
 $getStruct = ['page','args'];
-//  : effecer arg array si vide et passer merge $_GET DANS la métrhode auto et faire disparare GET[0]
 $_GET=router::auto($landingDefaut,$getStruct);
 // echo '$_GET <br><pre> '.print_r($_GET,1).'</pre>';
-// $_GET['page']='home.html';
 
+/*
+    Le visiteur non loggé n'a pas acces à la page profil
+*/
 if(!isset($_SESSION['id']) && $_GET['page']=='profil.php'){
-  header('Location:./home.html');
+  header('Location:./');
   exit;
 }
 
-
-$callcontroler = 'controler/'.str_replace('html','php',$_GET['page']);
-$callhtml = 'public/tpl/'.$_GET['page'].'.twig';
-
-if(file_exists($callcontroler)){
-  include $callcontroler;
+if(!isset($_SESSION['id'])){
+  $compteID = 'guest';
 }
-elseif (!file_exists($callhtml)){
-  $callhtml = 'public/tpl/404.html.twig';
+else {
+  $compteID = $_SESSION['pseudo'];
 }
 
-echo $twig->render($_GET['page'].'.twig', [
+/*
+    Créer les variables d'environnement pour twig
+*/
+$defauttwig = [
+  'docRoot' => $_GET['docRoot'],
   'siteLang' => $CONFIG['lang'],
   'sitetitle' => $CONFIG['sitetitle'],
   'sitedescription' => $CONFIG['sitedescription'],
-  'sitelogo' => 'public/images/logo.svg'
-]);
+  'compteId' => $compteID,
+  'sitelogo' => 'public/images/logo.png'
+];
+
+/*
+    Defing file to load / import / include
+*/
+$callcontroler = 'controler/'.$_GET['page'].'.php';
+$callhtml = 'public/tpl/'.$_GET['page'].'.html.twig';
+
+/*
+    Import controller (if exist)
+*/
+if(file_exists($callcontroler)){
+  include $callcontroler;
+}
+/*
+    Import 404 cause nothing exist
+*/
+elseif (!file_exists($callhtml)){
+  $tabcontroler = [];
+  $callhtml = 'public/tpl/404.html.twig';
+}
+
+/*
+    Merge Var fot TWIG
+*/
+$twigrender = array_merge($defauttwig, $tabcontroler);
+
+// echo '<pre>'.print_r($twigrender,1).'</pre>';
+/*
+    RENDER TWIG
+*/
+echo $twig->render($_GET['page'].'.html.twig', $twigrender);
