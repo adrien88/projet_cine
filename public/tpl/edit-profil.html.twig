@@ -1,0 +1,33 @@
+{% extends "modelspages/profil.html.twig" %}
+{% block section %}
+
+  <div class="container">
+
+      <h2>EDITION DU PROFIL</h2>
+      <form method="POST" action="" enctype="multipart/form-data">
+
+          <div class="row">
+              <div class="col-6">
+                  <label>Pseudo :</label><br>
+                  <input type="text" name="newpseudo" placeholder="Pseudo" value="{{user.pseudo}}" />
+              </div>
+              <div class="col-6">
+                  <label>Mail :</label><br>
+                  <input type="text" name="newmail" placeholder="Mail" value="{{user.mail1}}" />
+              </div>
+              <div class="row"></div>
+              <div class="col-6">
+                  <label>Mot de passe :</label><br>
+                  <input type="password" name="newmdp1" placeholder="Mot de passe" />
+              </div>
+              <div class="col-6">
+                  <label>Confirmation - mot de passe :</label><br>
+                  <input type="password" name="newmdp2" placeholder="Confirmation du mot de passe" />
+              </div>
+              <input type="submit" value="Mettre à jour mon profil !" />
+          </div>
+      </form>
+      {#{%  if msg is defined %} {{ msg }} {% else header "connexion.php" %} {% endif %}#}
+
+    </div>
+{% endblock %}

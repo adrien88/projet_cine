@@ -1,0 +1,15 @@
+{% extends "modelspages/index.html.twig" %}
+{% block main %}
+
+  <section class="container">
+      <h2>PROFIL DE {{ userinfo.pseudo }}</h2>
+      <p>Mail : {{ userinfo.email }}</p>
+      <br>
+        <a href="edit-profil">Edition profil</a>
+        <a href="edit-films">Modifier mes film</a>
+  </section>
+
+  {% block section %}
+  {% endblock %}
+
+{% endblock %}

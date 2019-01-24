@@ -4,19 +4,17 @@
 
 // ouverture espace membre
 if(isset($_SESSION['id']) AND $_SESSION['id'] > 0) {
-   $getid = intval($_SESSION['id']);
-   $requser = $PDO->prepare('SELECT * FROM user WHERE id = ?');
-   $requser->execute(array($getid));
-   $userinfo = $requser->fetch();
-
-   echo $twig->render('profil.html.twig', array('id' => '', 'pseudo' => '', 'email' => '', 'password' => ''));
+ $getid = intval($_SESSION['id']);
+ $requser = $PDO->prepare('SELECT * FROM user WHERE id = ?');
+ $requser->execute(array($getid));
+ $userinfo = $requser->fetch();
 }
 
 
 // afficher films soumis
 $requete = $PDO->prepare('SELECT affiche FROM films WHERE nom = \''.$_SESSION['id'].'\'');
 $requete->execute();
-$data =  $requete->fetchAll();
+$listfilmsoumis =  $requete->fetchAll();
 
 
 // verif formulaire soumission de films
@@ -83,5 +81,8 @@ if(isset($_POST) and !empty($_POST)){
 
  }
 
- $tabcontroler = [];
+ $tabcontroler = [
+   'userinfo'=> $_SESSION,
+   'listfilmssoumis'=>$listfilmsoumis
+ ];
 ?>
