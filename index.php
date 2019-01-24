@@ -16,7 +16,7 @@ session_start();
 // Import PHP PDO
 require_once 'model/php/pdo.php';
 
-// inlude twig
+// include twig
 require_once 'vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem('public/tpl');
 // $twig = new Twig_Environment($loader, ['cache' => 'public/cache']);
