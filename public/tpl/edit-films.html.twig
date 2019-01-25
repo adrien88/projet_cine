@@ -5,24 +5,24 @@
   <section class="container">
     <div class="row">
 
-        <div class="col-12">
           {% if listfilmssoumis %}
+          <div class="col-sm-12 col-lg-6">
             <h3>Mes films :</h3>
             <div class="row">
               {% for key,film in listfilmssoumis %}
                 <div class="col-sm-12 col-md-6 col-lg-3">
-                  <a href="{{ docRoot }}film/{{film.id }}">
+                  <a href="{{ docRoot }}edit-films/edit/{{film.id }}">
                     <h3> {{ film.titre }} </h3>
-                    <img class="img-fluid" src="public/images/{{ film.affiches }}.jpg">
+                    <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiches }}.jpg">
                     <p> {{ film.genre }} </p>
                   </a>
                 </div>
               {% endfor %}
             </div>
+          </div>
           {% endif %}
-        </div>
 
-        <div class="col-12">
+        <div class="col-sm-12 col-lg-6">
             <h3>Je propose un film :</h3>
             <p>Tous les champs sont obligatoires</p>
             <form method="post" action="profil.php" enctype="multipart/form-data">
@@ -34,60 +34,105 @@
                 <input type="text" name="titre" value="{{ edititing.titre }}" minlenght="2" maxlength="30" required><br>
 
                 <label>Date de sortie</label><br>
-                <input type="text" name="annee" minlenght="4" maxlength="4" required><br>
+                <input type="text" name="annee" value="{{ edititing.annee }}" minlenght="4" maxlength="4" required><br>
+
+
 
                 <fieldset>
                     <legend>Genre :</legend>
                     <div>
-                        <input type="checkbox" name="genre[]" value="action">
+                        {% if edititing.genre matches '#action#'  %}
+                          <input type="checkbox" name="genre[]" value="action" checked>
+                        {% else %}
+                          <input type="checkbox" name="genre[]" value="action" >
+                        {% endif %}
                         <label for="action">Action</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="genre[]" value="aventure">
+                        {% if edititing.genre matches '#aventure#'  %}
+                          <input type="checkbox" name="genre[]" value="aventure" checked>
+                        {% else %}
+                          <input type="checkbox" name="genre[]" value="aventure" >
+                        {% endif %}
                         <label for="aventure">Aventure</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="genre[]" value="animation">
+                        {% if edititing.genre matches '#animation#'  %}
+                          <input type="checkbox" name="genre[]" value="animation" checked>
+                        {% else %}
+                          <input type="checkbox" name="genre[]" value="animation" >
+                        {% endif %}
                         <label for="animation">Animation</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="genre[]" value="Comédie">
+                      {% if edititing.genre matches '#Comedie#'  %}
+                        <input type="checkbox" name="genre[]" value="Comedie" checked>
+                      {% else %}
+                        <input type="checkbox" name="genre[]" value="Comedie" >
+                      {% endif %}
                         <label for="comedie">Comédie</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="genre[]" value="drame">
+                        {% if edititing.genre matches '#drame#'  %}
+                          <input type="checkbox" name="genre[]" value="drame" checked>
+                        {% else %}
+                          <input type="checkbox" name="genre[]" value="drame" >
+                        {% endif %}
                         <label for="drame">Drame</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="genre[]" value="horreur">
+                        {% if edititing.genre matches '#horreur#'  %}
+                          <input type="checkbox" name="genre[]" value="horreur" checked>
+                        {% else %}
+                          <input type="checkbox" name="genre[]" value="horreur" >
+                        {% endif %}
                         <label for="horreur">Horreur</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="genre[]" value="policier">
+                        {% if edititing.genre matches '#policier#'  %}
+                          <input type="checkbox" name="genre[]" value="policier" checked>
+                        {% else %}
+                          <input type="checkbox" name="genre[]" value="policier" >
+                        {% endif %}
                         <label for="policier">Policier</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="genre[]" value="sf">
+                        {% if edititing.genre matches '#science-fiction#'  %}
+                          <input type="checkbox" name="genre[]" value="science-fiction" checked>
+                        {% else %}
+                          <input type="checkbox" name="genre[]" value="science-fiction" >
+                        {% endif %}
                         <label for="sf">Science-fiction</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="genre[]" value="thriller">
+                        {% if edititing.genre matches '#thriller#'  %}
+                          <input type="checkbox" name="genre[]" value="thriller" checked>
+                        {% else %}
+                          <input type="checkbox" name="genre[]" value="thriller" >
+                        {% endif %}
                         <label for="thriller">Thriller</label>
                     </div>
                 </fieldset>
 
                 <label>Acteur(s)</label><br>
-                <input type="text" name="acteurs" id="acteurs" minlength="10" maxlength="100" required><br>
+                <input type="text" name="acteurs" value="{{ edititing.acteurs }}" id="acteurs" minlength="10" maxlength="100" required><br>
 
                 <label>Réalisateur(s)</label><br>
-                <input type="text" name="realisateurs" id="realisateurs" minlength="10" maxlength="100" required><br>
+                <input type="text" name="realisateurs" value="{{ edititing.realisateurs }}" id="realisateurs" minlength="10" maxlength="100" required><br>
 
                 <label>Description courte</label><br>
-                <textarea id="description" name="description" minlength="10" maxlength="1000" required></textarea><br>
+                <textarea id="description" name="description"  minlength="10" maxlength="1000" required>{{ edititing.description }}</textarea><br>
 
                 <label>Insérez l'affiche du film</label><br>
-                <input type="file" name="affiche" required><br>
-
+                {% if edititing.affiche  %}
+                  Actuelle : <br>
+                  <img src="{{docRoot}}public/images/{{edititing.affiche}}.jpg" alt="" height="100" width="70"><br>
+                  <input type="file" name="affiche" required><br>
+                {% else %}
+                  Envoyer :<br>
+                  <input type="file" name="affiche" required><br>
+                {% endif %}
+                <hr>
                 <input type="submit" id="btn" value="Soumettre"> {% if msgerror is defined%} {{ msgerror }} {% endif %}
           </div>
       </div>
