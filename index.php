@@ -43,9 +43,9 @@ $_GET=router::auto($landingDefaut,$getStruct);
 // echo '$_GET <br><pre> '.print_r($_GET,1).'</pre>';
 
 /*
-    Le visiteur non loggé n'a pas acces à la page profil
+    Le visiteur non loggé n'a pas acces à la page edition
 */
-if(!isset($_SESSION['id']) && $_GET['page']=='profil.php'){
+if(!isset($_SESSION['id']) && preg_match('#edit-#',$_GET['page'])){
   header('Location:./');
   exit;
 }
@@ -85,7 +85,6 @@ if(file_exists($callcontroler)){
     Import 404 cause nothing exist
 */
 elseif (!file_exists($callhtml)){
-  
   $callhtml = 'public/tpl/404.html.twig';
 }
 

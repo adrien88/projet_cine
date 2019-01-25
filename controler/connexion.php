@@ -21,7 +21,7 @@ if(isset($_POST) and !empty($_POST)) {
        $_SESSION['id'] = $userinfo['id'];
        $_SESSION['pseudo'] = $userinfo['pseudo'];
        $_SESSION['email'] = $userinfo['email'];
-       header('Location: profil');
+       header('Location:edit-profil');
        exit;
 
       } else {
