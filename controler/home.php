@@ -12,7 +12,8 @@ foreach($data as $row){
     }
   }
 }
-$tabcontroler = ['films' => $data, 'genres' => $genreList];
+$tabcontroler = ['films' => $data, 'genres' => $genreList, 'printHeader'=>true];
+
 
 // // Rechercher un film par genre
   if(
