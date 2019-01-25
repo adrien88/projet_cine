@@ -1,14 +1,17 @@
 <?php
 
-// Fiche du films -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Fiche des films -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 $retour = $PDO->query('SELECT * FROM films');
 $data = $retour->fetchAll();
 $genreList = [];
 foreach($data as $row){
   foreach($row as $key => $value){
-    if($key == 'genre' && !in_array($value, $genreList)){
-      $genreList[] = $value;
+    $tab = explode(',',$value);
+    foreach($tab as $sgenre){
+      if($key == 'genre' && !in_array($value, $genreList)){
+        $genreList[] = $sgenre;
+      }
     }
   }
 }

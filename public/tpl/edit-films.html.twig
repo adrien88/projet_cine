@@ -9,20 +9,20 @@
     <div class="row">
 
           {% if listfilmssoumis %}
-          <div class="col-sm-12 col-lg-6">
-            <h3>Mes films :</h3>
-            <div class="row">
-              {% for key,film in listfilmssoumis %}
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                  <a href="{{ docRoot }}edit-films/edit/{{film.id }}">
-                    <h3> {{ film.titre }} </h3>
-                    <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
-                    <p> {{ film.genre }} </p>
-                  </a>
-                </div>
-              {% endfor %}
+            <div class="col-sm-12 col-lg-6">
+              <h3>Mes films :</h3>
+              <div class="row">
+                {% for key,film in listfilmssoumis %}
+                  <div class="col-sm-12 col-md-6 col-lg-3">
+                    <a href="{{ docRoot }}edit-films/edit/{{film.id }}">
+                      <h3> {{ film.titre }} </h3>
+                      <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
+                      <p> {{ film.genre }} </p>
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
             </div>
-          </div>
           {% endif %}
 
         <div class="col-sm-12 col-lg-6">
@@ -30,8 +30,7 @@
             <p>Tous les champs sont obligatoires</p>
             <form method="post" action="" enctype="multipart/form-data">
             <input type="varchar" name="hidden" value="{{ actionForm }}" hidden>
-
-            <input type="varchar" name="hidden" value="{{ edititing.id }}" hidden>
+            <input type="varchar" name="id" value="{{ edititing.id }}" hidden>
 
                 <label>Titre du film</label><br>
                 <input type="text" name="titre" value="{{ edititing.titre }}" minlenght="2" maxlength="30" required><br>
@@ -128,13 +127,13 @@
 
                 <label>Insérez l'affiche du film</label><br>
                 {% if edititing.affiche  %}
-                  Actuelle : <br>
+                  Actuelle : {{edititing.affiche}}.jpg<br>
                   <img src="{{docRoot}}public/images/{{edititing.affiche}}.jpg" alt="" height="100" width="70"><br>
                   <input type="varchar" name="affiche" hidden><br>
                   <input type="file" name="nouvelleaffiche" ><br>
                 {% else %}
                   Envoyer :<br>
-                  <input type="file" name="nouvelleaffiche" required><br>
+                  <input type="file" name="nouvelleaffiche"><br>
                 {% endif %}
                 <hr>
                 <input type="submit" id="btn" value="Soumettre"> {% if msgerror is defined%} {{ msgerror }} {% endif %}

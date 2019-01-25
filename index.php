@@ -51,7 +51,7 @@ if(!isset($_SESSION['id']) && preg_match('#edit-#',$_GET['page'])){
 }
 
 if(!isset($_SESSION['id'])){
-  $compteID = 'guest';
+  $compteID = 'invité';
 }
 else {
   $compteID = $_SESSION['pseudo'];

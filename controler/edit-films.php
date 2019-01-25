@@ -4,33 +4,11 @@ $erreur ='';
 $actionForm = 'add';
 $preremplissage = [];
 
-// afficher films soumis
-$requete = $PDO->prepare('SELECT * FROM films WHERE nom = ?');
-$requete->execute(array($_SESSION['pseudo']));
-$listfilmsoumis =  $requete->fetchAll();
-
-  // Rechercher un film par genre
-  if(
-    isset($_GET['args'][0]) AND
-    $_GET['args'][0] == 'edit'
-  ){
-    // Rechercher un film par genre
-    if(
-      isset($_GET['args'][1]) AND
-      !empty($_GET['args'][1])
-    ){
-      // chercher le film à modifier
-      $requete = $PDO->prepare('SELECT * FROM films WHERE id = ?;');
-      $requete->execute(array($_GET['args'][1]));
-      $data =  $requete ->fetch();
-      $actionForm = 'edit';
-      $preremplissage = $data;
-    }
-  }
 
 
 // verif formulaire soumission de films
 if(isset($_POST) and !empty($_POST)){
+  $filmId = ($_POST['id']);
   $titre = ($_POST['titre']);
   $annee = ($_POST['annee']);
   $genre = ($_POST['genre']);
@@ -77,13 +55,14 @@ if(isset($_POST) and !empty($_POST)){
      }
 
      if(isset($_FILES['nouvelleaffiche']) && !empty($_FILES['nouvelleaffiche'])){
-       $cible = '../public/'.$_FILES['nouvelleaffiche']['name'];
+       $cible = 'public/images/'.$_FILES['nouvelleaffiche']['name'];
        $resultat = move_uploaded_file($_FILES['nouvelleaffiche']['tmp_name'],$cible);
        if ($resultat == false){
          $erreur .= "Erreur lors du déplacement du fichier.";
-       } else{
-         $sqlFilename = preg_replace('#(.*)\.(jpe?g|png|giff?|tiff?)$#i','$1', $_FILES['nouvelleaffiche']['name']);
        }
+       else{
+       }
+       $sqlFilename = preg_replace('#(.*)\.(jpe?g|png|giff?|tiff?)$#i','$1', $_FILES['nouvelleaffiche']['name']);
      }
      else{
        $sqlFilename = $_POST['affiche'];
@@ -97,20 +76,46 @@ if(isset($_POST) and !empty($_POST)){
      $insertfilm = $PDO->prepare($req);
      $insertfilm->execute(array(
        $titre, $annee, implode(',',$genre),
-       $acteurs, $realisateurs, $description,$sqlFilename
+       $acteurs, $realisateurs, $description, $sqlFilename
      ));
      $erreur = "Merci pour votre contribution.";
    }
-   elseif  ($_POST['hidden']=='edit') {
+   elseif ($_POST['hidden']=='edit') {
      $req = "UPDATE films SET titre=?, annee=?, genre=?, acteurs=?, realisateurs=?, description=?, affiche=? WHERE id=?" ;
      $updatefilm = $PDO->prepare($req);
      $updatefilm->execute(array(
        $titre, $annee, implode(',',$genre),
-       $acteurs, $realisateurs, $description,$sqlFilename
+       $acteurs, $realisateurs, $description, $sqlFilename,$filmId
      ));
    }
 
  }
+
+
+ // afficher films soumis
+ $requete = $PDO->prepare('SELECT * FROM films WHERE nom = ?');
+ $requete->execute(array($_SESSION['pseudo']));
+ $listfilmsoumis =  $requete->fetchAll();
+
+   // Rechercher un film par genre
+   if(
+     isset($_GET['args'][0]) AND
+     $_GET['args'][0] == 'edit'
+   ){
+     // Rechercher un film par genre
+     if(
+       isset($_GET['args'][1]) AND
+       !empty($_GET['args'][1])
+     ){
+       // chercher le film à modifier
+       $requete = $PDO->prepare('SELECT * FROM films WHERE id = ?;');
+       $requete->execute(array($_GET['args'][1]));
+       $data =  $requete ->fetch();
+       $actionForm = 'edit';
+       $preremplissage = $data;
+     }
+   }
+
 
  $tabcontroler = [
    'actionForm' => $actionForm,
