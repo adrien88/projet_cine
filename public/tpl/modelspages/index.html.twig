@@ -27,10 +27,13 @@
 </head>
 
 <body id="body" class="container-fluid">
-    {% include 'modelspages/navbar.html.twig' ignore missing %}
-    <header id="header" class="container-fluid">
 
-        {% include 'modelspages/carousel.html.twig' ignore missing %}
+    {% include 'modelspages/navbar.html.twig' ignore missing %}
+
+    <header id="header" class="container-fluid">
+    {% block header %}
+      {% include 'modelspages/carousel.html.twig' ignore missing %}
+    {% endblock %}
     </header>
 
 
