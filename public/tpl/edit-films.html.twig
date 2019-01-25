@@ -16,7 +16,7 @@
                 <div class="col-sm-12 col-md-6 col-lg-3">
                   <a href="{{ docRoot }}edit-films/edit/{{film.id }}">
                     <h3> {{ film.titre }} </h3>
-                    <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiches }}.jpg">
+                    <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
                     <p> {{ film.genre }} </p>
                   </a>
                 </div>
@@ -28,7 +28,7 @@
         <div class="col-sm-12 col-lg-6">
             <h3>Je propose un film :</h3>
             <p>Tous les champs sont obligatoires</p>
-            <form method="post" action="profil.php" enctype="multipart/form-data">
+            <form method="post" action="" enctype="multipart/form-data">
             <input type="varchar" name="hidden" value="{{ actionForm }}" hidden>
 
             <input type="varchar" name="hidden" value="{{ edititing.id }}" hidden>
@@ -130,10 +130,11 @@
                 {% if edititing.affiche  %}
                   Actuelle : <br>
                   <img src="{{docRoot}}public/images/{{edititing.affiche}}.jpg" alt="" height="100" width="70"><br>
-                  <input type="file" name="affiche" required><br>
+                  <input type="varchar" name="affiche" hidden><br>
+                  <input type="file" name="nouvelleaffiche" ><br>
                 {% else %}
                   Envoyer :<br>
-                  <input type="file" name="affiche" required><br>
+                  <input type="file" name="nouvelleaffiche" required><br>
                 {% endif %}
                 <hr>
                 <input type="submit" id="btn" value="Soumettre"> {% if msgerror is defined%} {{ msgerror }} {% endif %}

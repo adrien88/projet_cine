@@ -25,16 +25,6 @@ $listfilmsoumis =  $requete->fetchAll();
       $data =  $requete ->fetch();
       $actionForm = 'edit';
       $preremplissage = $data;
-      // [
-      //   'affiche' => $data['affiches'],
-      //   'affiche' => $data['affiches'],
-      //   'titre' => $data['titre'],
-      //   'annee' => $data['annee'],
-      //   'genre' => $data['genre'],
-      //   'acteurs' => $data['acteurs'],
-      //   'realisateurs' => $data['realisateurs'],
-      //   'description' => $data['description']
-      // ];
     }
   }
 
@@ -86,12 +76,17 @@ if(isset($_POST) and !empty($_POST)){
         $erreur .= "Ce champ doit être rempli";
      }
 
-     if(isset($_FILES['affiche']) && !empty($_FILES['affiche'])){
-       $cible = '../public/upload/'.$_FILES['affiche']['name'];
-       $resultat = move_uploaded_file($_FILES['affiche']['tmp_name'],$cible);
+     if(isset($_FILES['nouvelleaffiche']) && !empty($_FILES['nouvelleaffiche'])){
+       $cible = '../public/'.$_FILES['nouvelleaffiche']['name'];
+       $resultat = move_uploaded_file($_FILES['nouvelleaffiche']['tmp_name'],$cible);
        if ($resultat == false){
          $erreur .= "Erreur lors du déplacement du fichier.";
+       } else{
+         $sqlFilename = preg_replace('#(.*)\.(jpe?g|png|giff?|tiff?)$#i','$1', $_FILES['nouvelleaffiche']['name']);
        }
+     }
+     else{
+       $sqlFilename = $_POST['affiche'];
      }
 
    // ok verif
@@ -102,18 +97,16 @@ if(isset($_POST) and !empty($_POST)){
      $insertfilm = $PDO->prepare($req);
      $insertfilm->execute(array(
        $titre, $annee, implode(',',$genre),
-       $acteurs, $realisateurs, $description,
-       $_FILES['affiche']['name']
+       $acteurs, $realisateurs, $description,$sqlFilename
      ));
      $erreur = "Merci pour votre contribution.";
    }
-   else ($_POST['hidden']=='edit') {
-     // $req = "UPDATE films SET titre=?, annee=?, genre=?, acteurs=?, realisateurs=?, description=?, affiche=? WHERE id=?" ;
+   elseif  ($_POST['hidden']=='edit') {
+     $req = "UPDATE films SET titre=?, annee=?, genre=?, acteurs=?, realisateurs=?, description=?, affiche=? WHERE id=?" ;
      $updatefilm = $PDO->prepare($req);
      $updatefilm->execute(array(
        $titre, $annee, implode(',',$genre),
-       $acteurs, $realisateurs, $description,
-       $_FILES['affiche']['name']
+       $acteurs, $realisateurs, $description,$sqlFilename
      ));
    }
 

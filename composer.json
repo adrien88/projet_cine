@@ -1,5 +1,5 @@
 {
-    "name": "stagiaire/projet_cine",
+    "name": "adrien/projet_cine",
     "description": "projet",
     "require": {
         "twig/extensions": "2.0"
