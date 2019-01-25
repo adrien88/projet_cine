@@ -11,9 +11,9 @@
             #titres {
                 color: $popcorn;
                 z-index: 5;
-                text-align: center;
+                text-align: left;
                 h1 {
-                    font-size: 2.5em;
+                    font-size: 4em;
                     text-shadow: 1px 2px 2px grey;
                 }
             }
@@ -26,7 +26,7 @@
             }
             i {
                 color: $secondarycolor;
-                font-size: 3em;
+                font-size: 2.5em;
             }
             input::placeholder {
                 color: $secondarycolor;
@@ -42,8 +42,8 @@
                 font-weight: 500;
             }
             a:hover {
-                border: 2px $secondarycolor solid;
                 color: $secondarycolor;
+                opacity: 0.5;
                 background-color: transparent;
             }
         }
@@ -55,7 +55,7 @@
                     z-index: 5;
                     text-align: center;
                     h2 {
-                        font-size: 2em;
+                        font-size: 1.5em;
                         text-shadow: 1px 2px 2px black;
                     }
                 }
@@ -81,17 +81,17 @@
             }
         }
         footer {
-            background-color: $primarycolor;
-            color: $secondarycolor;
             padding: 1em;
             width: 100%;
             #footer-title {
+                background-color: $secondarycolor;
+                color: $primarycolor;
                 text-align: center;
                 margin-top: -20px;
                 font-size: 1em;
             }
             input::placeholder {
-                color: $secondarycolor;
+                color: grey;
                 opacity: 0.5;
             }
             input {
@@ -126,7 +126,7 @@
                 display: inline;
                 margin: 5px;
                 i {
-                    color: $secondarycolor;
+                    color: grey;
                 }
             }
             a {
@@ -135,6 +135,9 @@
             a:hover {
                 color: $secondarycolor;
                 text-transform: none;
+            }
+            h2 {
+                color: $secondarycolor;
             }
         }
     }

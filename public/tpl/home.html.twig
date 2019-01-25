@@ -3,7 +3,21 @@
   {% block main %}
 
 
+ {% if genres %}
 
+      <h2>Rechercher par thème</h2>
+
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <ul class="navbar-nav ">
+      {% for genre in genres %}
+            <li class='nav-item genre-items'>
+              <a href="home/genre/{{genre}}">{{ genre }}</a>
+            </li>
+      {% endfor %}
+        </ul>
+      </nav>
+
+    {% endif %}
 
 
     {% if films %}
@@ -22,21 +36,7 @@
     {% endif %}
 
 
-    {% if genres %}
-
-      <h2>Rechercher par thème</h2>
-
-      <nav class="navbar navbar-light navbar-expand-lg bg-light">
-        <ul class="navbar-nav ">
-      {% for genre in genres %}
-            <li class='nav-item genre-items'>
-              <a href="home/genre/{{genre}}">{{ genre }}</a>
-            </li>
-      {% endfor %}
-        </ul>
-      </nav>
-
-    {% endif %}
+   
 
     {% if film %}
 
