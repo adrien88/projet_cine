@@ -5,8 +5,8 @@ $actionForm = 'add';
 $preremplissage = [];
 
 // afficher films soumis
-$requete = $PDO->prepare('SELECT affiche FROM films WHERE nom = \''.$_SESSION['id'].'\'');
-$requete->execute();
+$requete = $PDO->prepare('SELECT * FROM films WHERE nom = ?');
+$requete->execute(array($_SESSION['pseudo']));
 $listfilmsoumis =  $requete->fetchAll();
 
   // Rechercher un film par genre
@@ -25,9 +25,10 @@ $listfilmsoumis =  $requete->fetchAll();
       $data =  $requete ->fetch();
       $actionForm = 'edit';
       $preremplissage = [
+        'affiche' => $data['affiches'],
         'titre' => $data['titre'],
         'annee' => $data['annee'],
-        'genre' => explode(',',$data['genre']),
+        'genre' => $data['genre'],
         'acteurs' => $data['acteurs'],
         'realisateurs' => $data['realisateurs'],
         'description' => $data['description']
