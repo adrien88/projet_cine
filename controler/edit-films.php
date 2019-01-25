@@ -24,15 +24,17 @@ $listfilmsoumis =  $requete->fetchAll();
       $requete->execute(array($_GET['args'][1]));
       $data =  $requete ->fetch();
       $actionForm = 'edit';
-      $preremplissage = [
-        'affiche' => $data['affiches'],
-        'titre' => $data['titre'],
-        'annee' => $data['annee'],
-        'genre' => $data['genre'],
-        'acteurs' => $data['acteurs'],
-        'realisateurs' => $data['realisateurs'],
-        'description' => $data['description']
-      ];
+      $preremplissage = $data;
+      // [
+      //   'affiche' => $data['affiches'],
+      //   'affiche' => $data['affiches'],
+      //   'titre' => $data['titre'],
+      //   'annee' => $data['annee'],
+      //   'genre' => $data['genre'],
+      //   'acteurs' => $data['acteurs'],
+      //   'realisateurs' => $data['realisateurs'],
+      //   'description' => $data['description']
+      // ];
     }
   }
 
@@ -80,8 +82,7 @@ if(isset($_POST) and !empty($_POST)){
      }
 
      // commentaires
-     if (!empty($description)) {}
-        else {
+     if (!empty($description)) {
         $erreur .= "Ce champ doit être rempli";
      }
 
@@ -99,15 +100,20 @@ if(isset($_POST) and !empty($_POST)){
    if ($_POST['hidden']=='add') {
      $req = "INSERT INTO films(titre, annee, genre, acteurs, realisateurs, description, affiche) VALUES(?, ?, ?, ?, ?, ?, ?)";
      $insertfilm = $PDO->prepare($req);
-     $insertfilm->execute(array($titre, $annee, implode(',',$genre), $acteurs, $realisateurs, $description, $_FILES['affiche']['name']));
+     $insertfilm->execute(array(
+       $titre, $annee, implode(',',$genre),
+       $acteurs, $realisateurs, $description,
+       $_FILES['affiche']['name']));
      $erreur = "Merci pour votre contribution.";
    }
-   else {
-     $req = "UPDATE films SET titre=?, annee=?, genre=?, acteurs=?, realisateurs=?, description=?, affiche=? WHERE id=?";
+   else ($_POST['hidden']=='edit') {
+     $req = "UPDATE films SET titre=?, annee=?, genre=?, acteurs=?, realisateurs=?, description=?, affiche=? WHERE id=?" ;
      $updatefilm = $PDO->prepare($req);
      $updatefilm->execute(array(
-
-     ));
+       $titre, $annee, implode(',',$genre),
+       $acteurs, $realisateurs, $description,
+       $_FILES['affiche']['name']
+     )); 
    }
 
  }
