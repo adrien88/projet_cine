@@ -103,17 +103,18 @@ if(isset($_POST) and !empty($_POST)){
      $insertfilm->execute(array(
        $titre, $annee, implode(',',$genre),
        $acteurs, $realisateurs, $description,
-       $_FILES['affiche']['name']));
+       $_FILES['affiche']['name']
+     ));
      $erreur = "Merci pour votre contribution.";
    }
    else ($_POST['hidden']=='edit') {
-     $req = "UPDATE films SET titre=?, annee=?, genre=?, acteurs=?, realisateurs=?, description=?, affiche=? WHERE id=?" ;
+     // $req = "UPDATE films SET titre=?, annee=?, genre=?, acteurs=?, realisateurs=?, description=?, affiche=? WHERE id=?" ;
      $updatefilm = $PDO->prepare($req);
      $updatefilm->execute(array(
        $titre, $annee, implode(',',$genre),
        $acteurs, $realisateurs, $description,
        $_FILES['affiche']['name']
-     )); 
+     ));
    }
 
  }
