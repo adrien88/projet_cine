@@ -5,15 +5,15 @@ body {
 body nav {
   height: 150px;
   background-color: black;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 body nav #titres {
   color: #fffae9;
   z-index: 5;
-  text-align: center;
+  text-align: left;
 }
 body nav #titres h1 {
-  font-size: 3em;
+  font-size: 4em;
   text-shadow: 1px 2px 2px grey;
 }
 body nav input {
@@ -25,7 +25,7 @@ body nav input {
 }
 body nav i {
   color: #ee2b2e;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 body nav input::placeholder {
   color: #ee2b2e;
@@ -41,8 +41,8 @@ body nav a {
   font-weight: 500;
 }
 body nav a:hover {
-  border: 2px #ee2b2e solid;
   color: #ee2b2e;
+  opacity: 0.5;
   background-color: transparent;
 }
 body #header {
@@ -54,7 +54,7 @@ body #header #rowtitre #titres {
   text-align: center;
 }
 body #header #rowtitre #titres h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   text-shadow: 1px 2px 2px black;
 }
 body #header .carousel-indicators {
@@ -98,8 +98,6 @@ body #main input input :active {
   color: #ee2b2e;
 }
 body footer {
-  background-color: black;
-  color: #ee2b2e;
   padding: 1em;
   width: 100%;
 }
@@ -107,12 +105,14 @@ body footer #footerimg {
   background-image: url(public/images/footerimg.png);
 }
 body footer #footer-title {
+  background-color: #ee2b2e;
+  color: black;
   text-align: center;
   margin-top: -20px;
   font-size: 1em;
 }
 body footer input::placeholder {
-  color: #ee2b2e;
+  color: grey;
   opacity: 0.5;
 }
 body footer input :hover {
@@ -144,7 +144,7 @@ body footer li {
   margin: 5px;
 }
 body footer li i {
-  color: #ee2b2e;
+  color: grey;
 }
 body footer a {
   color: #ee2b2e;
@@ -152,6 +152,9 @@ body footer a {
 body footer a:hover {
   color: #ee2b2e;
   text-transform: none;
+}
+body footer h2 {
+  color: #ee2b2e;
 }
 
 /*# sourceMappingURL=core.css.map */

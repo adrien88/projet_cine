@@ -25,7 +25,7 @@ if(isset($_POST) and !empty($_POST)) {
        exit;
 
       } else {
-         $erreur = "Mauvais mail ou mot de passe.";
+         $erreur = "Mauvais mot de passe.";
       }
    } else {
       $erreur = "L'utilisateur n'éxiste pas.";

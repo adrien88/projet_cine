@@ -3,11 +3,11 @@
   {% block main %}
 
 
-    {% if genres %}
+ {% if genres %}
 
       <h2>Rechercher par thème</h2>
 
-      <nav class="navbar navbar-light navbar-expand-lg bg-light">
+      <nav class="navbar navbar-light navbar-expand-lg">
         <ul class="navbar-nav ">
       {% for genre in genres %}
             <li class='nav-item genre-items'>
@@ -20,7 +20,6 @@
     {% endif %}
 
 
-
     {% if films %}
       <h2>A l'affiche</h2>
       <div class="row">
@@ -28,7 +27,7 @@
           <div class="col-sm-12 col-md-6 col-lg-3">
             <a href="home/film/{{film.id }}">
               <h3> {{ film.titre }} </h3>
-              <img class="img-fluid" src="public/images/{{ film.affiches }}.jpg">
+              <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
               <p> {{ film.genre }} </p>
             </a>
           </div>
@@ -37,11 +36,13 @@
     {% endif %}
 
 
+   
+
     {% if film %}
 
       <div class="col-12">
         <h2> {{ film.titre }} </h2>
-        <img src="{{ docRoot }}public/images/{{ film.affiches }}.jpg">
+        <img src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
         <p> {{ film.description }} </p>
         <p> {{ film.genre }} </p>
       </div>
@@ -57,7 +58,7 @@
             <div class="col-sm-12 col-md-6 col-lg-3">
               <a href="../film/{{ film.id }}">
                 <h3> {{ film.titre }} </h3>
-                <img src="{{ docRoot }}public/images/{{ film.affiches }}.jpg">
+                <img src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
                 <p> {{ film.genre }} </p>
               </a>
             </div>

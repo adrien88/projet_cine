@@ -6,7 +6,7 @@
 </button>
 
             <div class="col-2">
-                <img class="navbar-brand img-fluid" href="#"><img src="{{ docRoot }} public/images/popcorn.png" width="200">
+                <a class="navbar-brand" href="./{{docRoot}}"><img src="./{{docRoot}}public/images/popcorn.png" width="150"></a>
             </div>
             <div class="col-4" id="titres">
                 <h1>cinéVore</h1>
@@ -27,11 +27,11 @@
             Connecté en tant que <b>{{ compteId }}</b>
           </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                {% if compteId == 'guest' %}
-                                <a class=" dropdown-item " href="connexion ">Connexion</a>
-                                <a class="dropdown-item " href="inscription ">Créer un compte</a> {% else %}
-                                <a class="dropdown-item " href="profil ">Mon compte</a>
-                                <a class="dropdown-item " href="deconnexion ">Déconnexion</a> {% endif %}
+                                {% if compteId == 'invité' %}
+                                <a class=" dropdown-item " href="{{docRoot}}connexion ">Connexion</a>
+                                <a class="dropdown-item " href="{{docRoot}}inscription ">Créer un compte</a> {% else %}
+                                <a class="dropdown-item " href="{{docRoot}}edit-profil ">Mon compte</a>
+                                <a class="dropdown-item " href="{{docRoot}}deconnexion ">Déconnexion</a> {% endif %}
                             </div>
                         </li>
                     </ul>
