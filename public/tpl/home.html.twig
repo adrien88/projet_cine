@@ -5,7 +5,7 @@
 
  {% if genres %}
 
-      <h2>Rechercher par thème</h2>
+      <h3>Rechercher par thème</h3>
 
       <nav class="navbar navbar-light navbar-expand-lg">
         <ul class="navbar-nav ">
@@ -21,12 +21,12 @@
 
 
     {% if films %}
-      <h2>A l'affiche</h2>
+      <h3>A l'affiche</h3>
       <div class="row">
         {% for key,film in films %}
-          <div class="col-sm-12 col-md-6 col-lg-3">
+          <div id="blocfilm" class="col-sm-12 col-md-6 col-lg-3">
             <a href="home/film/{{film.id }}">
-              <h3> {{ film.titre }} </h3>
+              <h4> {{ film.titre }} </h4>
               <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
               <p> {{ film.genre }} </p>
             </a>
@@ -41,8 +41,8 @@
     {% if film %}
 
       <div class="col-12">
-        <h2> {{ film.titre }} </h2>
-        <img src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
+        <h4> {{ film.titre }} </h4>
+        <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
         <p> {{ film.description }} </p>
         <p> {{ film.genre }} </p>
       </div>
@@ -57,8 +57,8 @@
           {% for key,film in filmsrecherches %}
             <div class="col-sm-12 col-md-6 col-lg-3">
               <a href="../film/{{ film.id }}">
-                <h3> {{ film.titre }} </h3>
-                <img src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
+                <h4> {{ film.titre }} </h4>
+                <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
                 <p> {{ film.genre }} </p>
               </a>
             </div>
