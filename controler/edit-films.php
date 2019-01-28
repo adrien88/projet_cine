@@ -1,7 +1,7 @@
 <?php
 
 $erreur ='';
-$actionForm = 'add';
+$actionForm = 'Ajouter';
 $preremplissage = [];
 
 
@@ -22,8 +22,7 @@ if(isset($_POST) and !empty($_POST)){
   !empty($realisateurs) AND !empty($description)) {
 
      //titre
-     if (preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï])+?$#", $titre)) {
-     } else {
+     if (!preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï])+?$#", $titre)){
         $erreur .= 'Nom incorrect';
      }
 
@@ -37,15 +36,13 @@ if(isset($_POST) and !empty($_POST)){
      }
 
      //acteurs
-     if (preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#", $acteurs)){
-
-     } else {
+     if (!preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#", $acteurs)){
         $erreur .= 'Nom incorrect';
      }
 
      // réalisateurs
-     if (preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#", $realisateurs)){
-     } else {
+     if (!preg_match("#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#", $realisateurs))
+     {
         $erreur .= 'Nom incorrect';
      }
 
@@ -54,24 +51,27 @@ if(isset($_POST) and !empty($_POST)){
         $erreur .= "Ce champ doit être rempli";
      }
 
-     if(isset($_FILES['nouvelleaffiche']) && !empty($_FILES['nouvelleaffiche'])){
+     $sqlFilename = $_POST['affiche'];
+
+     if(
+       isset($_FILES['nouvelleaffiche']) && !empty($_FILES['nouvelleaffiche'])
+       && preg_match('#\.jpe?g$#i',$_FILES['nouvelleaffiche']['name'])
+      ){
+
        $cible = 'public/images/'.$_FILES['nouvelleaffiche']['name'];
+       $cible = preg_replace('#(.*)\.(jpe?g)$#i','$1', $cible).'.jpg';
+
        $resultat = move_uploaded_file($_FILES['nouvelleaffiche']['tmp_name'],$cible);
        if ($resultat == false){
          $erreur .= "Erreur lors du déplacement du fichier.";
        }
        else{
+         $sqlFilename = preg_replace('#(.*)\.(jpe?g|png|giff?|tiff?)$#i','$1', basename($cible));
        }
-       $sqlFilename = preg_replace('#(.*)\.(jpe?g|png|giff?|tiff?)$#i','$1', $_FILES['nouvelleaffiche']['name']);
      }
-     else{
-       $sqlFilename = $_POST['affiche'];
-     }
-
-   // ok verif
    }
 
-   if ($_POST['hidden']=='add') {
+   if ($_POST['hidden']=='Ajouter') {
      $req = "INSERT INTO films(titre, annee, genre, acteurs, realisateurs, description, affiche) VALUES(?, ?, ?, ?, ?, ?, ?)";
      $insertfilm = $PDO->prepare($req);
      $insertfilm->execute(array(
@@ -80,7 +80,7 @@ if(isset($_POST) and !empty($_POST)){
      ));
      $erreur = "Merci pour votre contribution.";
    }
-   elseif ($_POST['hidden']=='edit') {
+   elseif ($_POST['hidden']=='Éditer') {
      $req = "UPDATE films SET titre=?, annee=?, genre=?, acteurs=?, realisateurs=?, description=?, affiche=? WHERE id=?" ;
      $updatefilm = $PDO->prepare($req);
      $updatefilm->execute(array(
@@ -88,7 +88,17 @@ if(isset($_POST) and !empty($_POST)){
        $acteurs, $realisateurs, $description, $sqlFilename,$filmId
      ));
    }
+   /*
+    TODO : ajouter option suppresion sur le twig
+   */
 
+   elseif ($_POST['hidden']=='Supprimer') {
+     $req = "DELETE films WHERE id=?" ;
+     $updatefilm = $PDO->prepare($req);
+     $updatefilm->execute(array(
+       $filmId
+     ));
+   }
  }
 
 
@@ -100,24 +110,30 @@ if(isset($_POST) and !empty($_POST)){
    // Rechercher un film par genre
    if(
      isset($_GET['args'][0]) AND
-     $_GET['args'][0] == 'edit'
+     $_GET['args'][0] == 'Éditer'
    ){
      // Rechercher un film par genre
      if(
        isset($_GET['args'][1]) AND
        !empty($_GET['args'][1])
      ){
-       // chercher le film à modifier
        $requete = $PDO->prepare('SELECT * FROM films WHERE id = ?;');
        $requete->execute(array($_GET['args'][1]));
        $data =  $requete ->fetch();
-       $actionForm = 'edit';
+       $actionForm = 'Éditer';
        $preremplissage = $data;
      }
+     // chercher le film à modifier
+   }
+
+   $listImgs=[];
+   foreach(glob('public/images/*.jpg') as $file){
+     $listImgs[] = basename(preg_replace('#(.*)\.(jpe?g)$#i','$1', $file));
    }
 
 
  $tabcontroler = [
+   'listAffiche' => $listImgs,
    'actionForm' => $actionForm,
    'edititing' => $preremplissage,
    'userinfo'=> $_SESSION,
