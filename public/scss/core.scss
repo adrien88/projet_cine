@@ -116,8 +116,13 @@
     }
 }
         footer {
-            background-image: url(public/images/footerimg.png);
-
+            #footerimg {
+                background-image: url(../images/seat.png);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 500px;
+            }
                 background-color: $primarycolor;
                 color: $secondarycolor;
                 padding: 1em;
@@ -179,4 +184,4 @@
                 color: $secondarycolor;
             }
         }
-    }
+    

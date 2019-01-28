@@ -76,6 +76,12 @@ body #header .carousel-inner .carousel-item .carousel-caption h3 {
 body #main {
   color: #ee2b2e;
 }
+body #main h2 {
+  text-align: center;
+}
+body #main #titleconnect {
+  padding-top: 100px;
+}
 body #main button {
   margin-top: 10px;
   border-radius: 5px;
@@ -98,31 +104,36 @@ body #main input input :active {
   color: #ee2b2e;
 }
 body footer {
+  background-color: black;
+  color: #ee2b2e;
   padding: 1em;
-  width: 100%;
 }
 body footer #footerimg {
-  background-image: url(public/images/footerimg.png);
+  background-image: url(../images/seat.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
 }
-body footer #footer-title {
+body #footer-title {
   background-color: #ee2b2e;
   color: black;
   text-align: center;
   margin-top: -20px;
   font-size: 1em;
 }
-body footer input::placeholder {
+body input::placeholder {
   color: grey;
   opacity: 0.5;
 }
-body footer input :hover {
+body input :hover {
   background-color: transparent;
   border: none;
 }
-body footer input input :active {
+body input input :active {
   color: #ee2b2e;
 }
-body footer #newsletter {
+body #newsletter {
   border: 2px solid #ee2b2e;
   border-radius: 5px;
   padding: 5px;
@@ -131,29 +142,29 @@ body footer #newsletter {
   background-color: transparent;
   font-size: 1.5em;
 }
-body footer #btnnews {
+body #btnnews {
   background-color: transparent;
   color: #ee2b2e;
   border-color: transparent;
   font-size: 3em;
 }
-body footer li {
+body li {
   list-style: none;
   font-size: 3em;
   display: inline;
   margin: 5px;
 }
-body footer li i {
+body li i {
   color: grey;
 }
-body footer a {
+body a {
   color: #ee2b2e;
 }
-body footer a:hover {
+body a:hover {
   color: #ee2b2e;
   text-transform: none;
 }
-body footer h2 {
+body h2 {
   color: #ee2b2e;
 }
 
