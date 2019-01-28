@@ -34,12 +34,11 @@ body nav #titres {
   margin-left: -10px;
 }
 body nav input {
-  max-height: 50px;
   background-color: transparent;
   max-width: 70%;
   border: 2px solid #ee2b2e;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
 }
 body nav input:active {
   border: none;
@@ -87,6 +86,13 @@ body #header #rowtitre .carousel-inner .carousel-item .carousel-caption {
   color: #fffae9;
   text-shadow: 1px 2px 2px black;
 }
+body main {
+  color: #ee2b2e;
+}
+body main #blocfilm {
+  margin-top: 20px;
+  padding-left: 10px;
+}
 body main #blocfilm h4,
 body main #blocfilm p {
   color: gray;
@@ -96,9 +102,35 @@ body main a:hover {
   text-decoration: none;
   opacity: 0.5;
 }
-body main #blocfilm {
-  margin-top: 20px;
-  padding-left: 10px;
+body main h2 {
+  text-align: center;
+}
+body main #titleconnect {
+  padding-top: 100px;
+}
+body main button {
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #ee2b2e;
+  border: none;
+}
+body main input {
+  background-color: transparent;
+  border-color: #ee2b2e;
+  border-radius: 5px;
+  padding: 5px;
+  max-width: 70%;
+}
+body main input::placeholder {
+  color: grey;
+  opacity: 0.5;
+}
+body main input :hover {
+  background-color: transparent;
+  border: none;
+}
+body main input input :active {
+  color: #ee2b2e;
 }
 body footer {
   padding: 1em;
@@ -136,6 +168,7 @@ body footer #newsletter {
   max-height: 50px;
   background-color: transparent;
   color: #ee2b2e;
+  padding: 5px;
 }
 body footer #btnnews {
   background-color: transparent;
