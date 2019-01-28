@@ -32,7 +32,7 @@
         {% for key,film in films %}
           <div id="blocfilm" class="col-sm-12 col-md-6 col-lg-3">
             <a href="home/film/{{film.id }}">
-              <h4> {{ film.titre }} </h4>
+              <h3> {{ film.titre }} </h3>
               <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
               <p> {{ film.genre }} </p>
             </a>

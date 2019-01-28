@@ -1,232 +1,231 @@
-$primarycolor: black;
-$secondarycolor: rgb(238, 43, 46);
-$popcorn: rgb(255, 250, 233);
-body {
-    background-color: $primarycolor;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1em;
-    h1 {
-        font-size: 5em;
-        text-shadow: 1px 2px 2px grey;
-        text-align: left;
-        color: $popcorn;
+    $primarycolor: black;
+    $secondarycolor: rgb(181, 9, 0);
+    $popcorn: rgb(255, 250, 233);
+    @font-face {
+        font-family: "ciné";
+        src: url("../fonts/Dark_Black.otf");
     }
-    h2 {
-        color: $popcorn;
-        font-size: 3em;
-        text-shadow: 1px 2px 2px black;
-    }
-    h3 {
-        color: $secondarycolor;
-        font-size: 2em;
-    }
-    h4,
-    p,
-    {
-        font-size: 1.5em;
-        color: $popcorn;
-        text-shadow: 1px 2px 2px black;
-    }
-    nav {
+    
+    body {
         background-color: $primarycolor;
-        #titres {
+        font-family: "ciné";
+        font-size: 1em;
+        h1 {
+            font-size: 5em;
+            text-shadow: 1px 2px 2px grey;
+            text-align: left;
             color: $popcorn;
-            z-index: 5;
-            text-align: justify;
-            margin-left: -10px;
+            font-family: 'Permanent Marker', cursive;
         }
-        input {
-            background-color: transparent;
-            max-width: 70%;
-            border: 2px solid $secondarycolor;
-            border-radius: 5px;
-            padding: 5px;
+        h2 {
+            color: $popcorn;
+            font-size: 3em;
+            text-shadow: 1px 2px 2px black;
         }
-        input:active {
-            border: none;
-        }
-        input::placeholder {
-            color: grey;
-            opacity: 0.5;
-            font-size: 1em;
-        }
-        i {
+        h3 {
             color: $secondarycolor;
-            font-size: 2.5em;
+            font-size: 2em;
         }
-        .navbar-toggler-icon {
-            background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
-            color: $secondarycolor;
-            background-color: $popcorn;
-        }
-        a {
-            color: $secondarycolor;
-            font-weight: 500;
+        h4,
+        p,
+        {
             font-size: 1.5em;
+            color: $popcorn;
+            text-shadow: 1px 2px 2px black;
         }
-        a:hover {
-            color: $secondarycolor;
-            opacity: 0.5;
-            background-color: transparent;
-        }
-        .dropdown-menu.show {
-            background-color: transparent;
-        }
-    }
-    #header {
-        #rowtitre {
-            h3 {
-                color: $popcorn;
-            }
+        nav {
+            background-color: $primarycolor;
             #titres {
+                color: $popcorn;
                 z-index: 5;
-                text-align: center;
+                text-align: justify;
+                margin-left: -10px;
             }
-            .carousel-inner {
-                .carousel-item {
-                    max-height: 500px;
-                    position: relative;
-                    .carousel-caption {
-                        background-color: rgba(0, 0, 0, 0.5);
-                        color: $popcorn;
-                        text-shadow: 1px 2px 2px black;
+            input {
+                background-color: transparent;
+                max-width: 70%;
+                border: 2px solid $secondarycolor;
+                border-radius: 5px;
+                padding: 5px;
+            }
+            input:active {
+                border: none;
+            }
+            input::placeholder {
+                color: grey;
+                opacity: 0.5;
+                font-size: 1em;
+            }
+            i {
+                color: $secondarycolor;
+                font-size: 2.5em;
+            }
+            .navbar-toggler-icon {
+                background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
+                color: $secondarycolor;
+                background-color: $popcorn;
+            }
+            a {
+                color: $secondarycolor;
+                font-weight: 500;
+                font-size: 1.5em;
+            }
+            a:hover {
+                color: $secondarycolor;
+                opacity: 0.5;
+                background-color: transparent;
+            }
+            .dropdown-menu.show {
+                background-color: transparent;
+            }
+        }
+        #header {
+            #rowtitre {
+                h3 {
+                    color: $popcorn;
+                }
+                #titres {
+                    z-index: 5;
+                    text-align: center;
+                }
+                .carousel-inner {
+                    .carousel-item {
+                        max-height: 500px;
+                        position: relative;
+                        .carousel-caption {
+                            background-color: rgba(0, 0, 0, 0.5);
+                            color: $popcorn;
+                            text-shadow: 1px 2px 2px black;
+                        }
                     }
                 }
             }
         }
-    }
-    main {
-        #blocfilm {
-            margin-top: 20px;
-            padding-left: 10px;
-            h4,
-            p {
-                color: gray;
+        main {
+            #blocfilm {
+                margin-top: 20px;
+                padding-left: 10px;
+                h4,
+                p {
+                    color: gray;
+                }
             }
-        }
-        h4:hover {
-            color: $secondarycolor;
-        }
-        a:hover {
-            color: $secondarycolor;
-            text-decoration: none;
-            opacity: 0.5;
-        }
-        //main espace membre login
-        h2 {
-            text-align: center;
-        }
-        #titleconnect {
-            padding-top: 100px;
-        }
-        button {
-            margin-top: 10px;
-            border-radius: 5px;
-            background-color: $secondarycolor;
-            border: none;
-        }
-        color: $secondarycolor;
-        input {
-            background-color: transparent;
-            border-color: $secondarycolor;
-            border-radius: 5px;
-            padding: 5px;
-            max-width: 70%;
-        }
-        input::placeholder {
-            color: grey;
-            opacity: 0.5;
-        }
-        input {
-            color: $secondarycolor;
-             :hover {
-                background-color: transparent;
+            h4:hover {
+                color: $secondarycolor;
+            }
+            a:hover {
+                color: $secondarycolor;
+                text-decoration: none;
+                opacity: 0.5;
+            }
+            //main espace membre login
+            h2 {
+                text-align: center;
+            }
+            #titleconnect {
+                padding-top: 100px;
+            }
+            button {
+                margin-top: 10px;
+                border-radius: 5px;
+                background-color: $secondarycolor;
                 border: none;
             }
+            color: $secondarycolor;
             input {
-                 :active {
-                    background-color: grey;
+                background-color: transparent;
+                border-color: $secondarycolor;
+                border-radius: 5px;
+                padding: 5px;
+                max-width: 70%;
+                //navbar recherche par genres
+                .navbar-toggler-icon {
+                    color: $secondarycolor;
+                    background-color: $popcorn;
+                    background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
+                }
+            }
+            #navbarNav {
+                color: $secondarycolor !important;
+                li {
+                    font-size: 0.8em;
+                    padding: 10px;
+                    border: 2px solid $secondarycolor;
+                    border-radius: 5px;
+                    margin: 5px;
                 }
             }
         }
-        //navbar recherche par genres
-        .navbar-toggler-icon {
+        footer {
+            padding: 1em;
+            width: 100%;
+            #footerimg {
+                background-image: url(../images/seat.png);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 300px;
+            }
+            background-color: $primarycolor;
             color: $secondarycolor;
-            background-color: $popcorn;
-            background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
-        }
-        #navbarNav {
-            color: $secondarycolor !important;
-            li {
-                font-size: 0.8em;
-                padding: 10px;
+            padding: 1em;
+            #footer-title {
+                background-color: $secondarycolor;
+                color: $primarycolor;
+                text-align: center;
+                margin-top: -20px;
+                font-size: 1em;
+            }
+            input::placeholder {
+                color: grey;
+                opacity: 0.5;
+            }
+            input {
+                color: $secondarycolor;
+                 :hover {
+                    background-color: transparent;
+                    border: none;
+                }
+                input {
+                     :active {
+                        background-color: grey;
+                    }
+                }
+            }
+            #newsletter {
                 border: 2px solid $secondarycolor;
                 border-radius: 5px;
-                margin: 5px;
-            }
-        }
-    }
-    footer {
-        padding: 1em;
-        width: 100%;
-        #footer-title {
-            background-color: $secondarycolor;
-            color: $primarycolor;
-            text-align: center;
-            margin-top: -20px;
-            font-size: 1em;
-        }
-        input {
-            color: $secondarycolor;
-             :hover {
+                padding-top: 10px;
+                margin-bottom: 10px;
+                max-width: 80%;
+                max-height: 50px;
                 background-color: transparent;
-                border: none;
+                color: $secondarycolor;
+                padding: 5px;
             }
-            input {
-                 :active {
-                    color: $secondarycolor;
-                }
+            #btnnews {
+                background-color: transparent;
+                color: $secondarycolor;
+                border-color: transparent;
+                font-size: 2.5em;
             }
-        }
-        input::placeholder {
-            color: grey;
-            opacity: 0.5;
-            font-size: 1em;
-        }
-        i {
-            color: grey;
-            font-size: 3em;
-            margin-right: 10px;
-        }
-        #newsletter {
-            border: 2px solid $secondarycolor;
-            border-radius: 5px;
-            padding-top: 10px;
-            margin-bottom: 10px;
-            max-width: 80%;
-            max-height: 50px;
-            background-color: transparent;
-            color: $secondarycolor;
-            padding: 5px;
-        }
-        #btnnews {
-            background-color: transparent;
-            color: $secondarycolor;
-            border-color: transparent;
-        }
-        a {
-            font-size: 0.8em;
-            color: grey !important;
-        }
-        a:hover {
-            color: $secondarycolor;
-            text-decoration: none;
-        }
-        li {
-            list-style: none;
-            display: inline;
+            a {
+                font-size: 0.8em;
+                color: grey !important;
+            }
+            a:hover {
+                color: $secondarycolor;
+                text-decoration: none;
+            }
+            li {
+                list-style: none;
+                display: inline;
+                font-size: 3em;
+                margin-right: 10px;
+            }
         }
     }
+    
     // ----------------------------------- media queries ------------------------------
     //desktop-laptop
     @media all and (min-width: 1024px) and (max-width: 1280px) {
@@ -238,6 +237,7 @@ body {
             font-size: 2.5em;
         }
     }
+    
     //laptop-tablet
     @media screen and (min-width: 768px) and (max-width: 1024px) {
         h1 {
@@ -258,6 +258,7 @@ body {
             font-size: 1em !important;
         }
     }
+    
     //tablet-mobile L
     @media screen and (min-width: 425px) and (max-width: 768px) {
         h1 {
@@ -278,6 +279,7 @@ body {
             font-size: 0.8em !important;
         }
     }
+    
     //mobile L-mobile M
     @media screen and (min-width: 375px) and (max-width: 425px) {
         h1 {
@@ -301,6 +303,7 @@ body {
             display: none;
         }
     }
+    
     //mobile M-mobile S
     @media all and (min-width: 320px) and (max-width: 375px) {
         h1 {
@@ -325,6 +328,7 @@ body {
             display: none;
         }
     }
+    
     //sous mobile S
     @media screen and (max-width: 320px) {
         h1 {
@@ -349,4 +353,3 @@ body {
             display: none;
         }
     }
-}

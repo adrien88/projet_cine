@@ -1,6 +1,11 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "ciné";
+  src: url("../fonts/Dark_Black.otf");
+}
 body {
   background-color: black;
-  font-family: "Permanent Marker", cursive;
+  font-family: "ciné";
   font-size: 1em;
 }
 body h1 {
@@ -8,6 +13,7 @@ body h1 {
   text-shadow: 1px 2px 2px grey;
   text-align: left;
   color: #fffae9;
+  font-family: "Permanent Marker", cursive;
 }
 body h2 {
   color: #fffae9;
@@ -15,7 +21,7 @@ body h2 {
   text-shadow: 1px 2px 2px black;
 }
 body h3 {
-  color: #ee2b2e;
+  color: #b50900;
   font-size: 2em;
 }
 body h4,
@@ -36,7 +42,7 @@ body nav #titres {
 body nav input {
   background-color: transparent;
   max-width: 70%;
-  border: 2px solid #ee2b2e;
+  border: 2px solid #b50900;
   border-radius: 5px;
   padding: 5px;
 }
@@ -49,21 +55,21 @@ body nav input::placeholder {
   font-size: 1em;
 }
 body nav i {
-  color: #ee2b2e;
+  color: #b50900;
   font-size: 2.5em;
 }
 body nav .navbar-toggler-icon {
   background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
-  color: #ee2b2e;
+  color: #b50900;
   background-color: #fffae9;
 }
 body nav a {
-  color: #ee2b2e;
+  color: #b50900;
   font-weight: 500;
   font-size: 1.5em;
 }
 body nav a:hover {
-  color: #ee2b2e;
+  color: #b50900;
   opacity: 0.5;
   background-color: transparent;
 }
@@ -87,7 +93,7 @@ body #header #rowtitre .carousel-inner .carousel-item .carousel-caption {
   text-shadow: 1px 2px 2px black;
 }
 body main {
-  color: #ee2b2e;
+  color: #b50900;
 }
 body main #blocfilm {
   margin-top: 20px;
@@ -98,10 +104,10 @@ body main #blocfilm p {
   color: gray;
 }
 body main h4:hover {
-  color: #ee2b2e;
+  color: #b50900;
 }
 body main a:hover {
-  color: #ee2b2e;
+  color: #b50900;
   text-decoration: none;
   opacity: 0.5;
 }
@@ -114,215 +120,228 @@ body main #titleconnect {
 body main button {
   margin-top: 10px;
   border-radius: 5px;
-  background-color: #ee2b2e;
+  background-color: #b50900;
   border: none;
 }
 body main input {
   background-color: transparent;
-  border-color: #ee2b2e;
+  border-color: #b50900;
   border-radius: 5px;
   padding: 5px;
   max-width: 70%;
 }
-body main input::placeholder {
-  color: grey;
-  opacity: 0.5;
-}
-body main input {
-  color: #ee2b2e;
-}
-body main input :hover {
-  background-color: transparent;
-  border: none;
-}
-body main input input :active {
-  background-color: grey;
-}
-body main .navbar-toggler-icon {
-  color: #ee2b2e;
+body main input .navbar-toggler-icon {
+  color: #b50900;
   background-color: #fffae9;
   background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
 }
 body main #navbarNav {
-  color: #ee2b2e !important;
+  color: #b50900 !important;
 }
 body main #navbarNav li {
   font-size: 0.8em;
   padding: 10px;
-  border: 2px solid #ee2b2e;
+  border: 2px solid #b50900;
   border-radius: 5px;
   margin: 5px;
 }
 body footer {
   padding: 1em;
   width: 100%;
+  background-color: black;
+  color: #b50900;
+  padding: 1em;
+}
+body footer #footerimg {
+  background-image: url(../images/seat.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
 }
 body footer #footer-title {
-  background-color: #ee2b2e;
+  background-color: #b50900;
   color: black;
   text-align: center;
   margin-top: -20px;
   font-size: 1em;
 }
+body footer input::placeholder {
+  color: grey;
+  opacity: 0.5;
+}
 body footer input {
-  color: #ee2b2e;
+  color: #b50900;
 }
 body footer input :hover {
   background-color: transparent;
   border: none;
 }
 body footer input input :active {
-  color: #ee2b2e;
-}
-body footer input::placeholder {
-  color: grey;
-  opacity: 0.5;
-  font-size: 1em;
-}
-body footer i {
-  color: grey;
-  font-size: 3em;
-  margin-right: 10px;
+  background-color: grey;
 }
 body footer #newsletter {
-  border: 2px solid #ee2b2e;
+  border: 2px solid #b50900;
   border-radius: 5px;
   padding-top: 10px;
   margin-bottom: 10px;
   max-width: 80%;
   max-height: 50px;
   background-color: transparent;
-  color: #ee2b2e;
+  color: #b50900;
   padding: 5px;
 }
 body footer #btnnews {
   background-color: transparent;
-  color: #ee2b2e;
+  color: #b50900;
   border-color: transparent;
+  font-size: 2.5em;
 }
 body footer a {
   font-size: 0.8em;
   color: grey !important;
 }
 body footer a:hover {
-  color: #ee2b2e;
+  color: #b50900;
   text-decoration: none;
 }
 body footer li {
   list-style: none;
   display: inline;
+  font-size: 3em;
+  margin-right: 10px;
 }
+
 @media all and (min-width: 1024px) and (max-width: 1280px) {
-  body #loupe {
+  #loupe {
     font-size: 1em !important;
   }
-  body i {
+
+  i {
     font-size: 2.5em;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  body h1 {
+  h1 {
     font-size: 3.5em !important;
   }
-  body h2 {
+
+  h2 {
     font-size: 2em !important;
   }
-  body h3 {
+
+  h3 {
     font-size: 1.8em;
   }
-  body input::placeholder,
-body #loupe,
-body #newsletter,
-body #btnnews,
-body a,
-body li {
+
+  input::placeholder,
+#loupe,
+#newsletter,
+#btnnews,
+a,
+li {
     font-size: 1em !important;
   }
 }
 @media screen and (min-width: 425px) and (max-width: 768px) {
-  body h1 {
+  h1 {
     font-size: 2.5em !important;
   }
-  body h2 {
+
+  h2 {
     font-size: 1.5em !important;
   }
-  body h3 {
+
+  h3 {
     font-size: 1em;
   }
-  body input::placeholder,
-body #loupe,
-body #newsletter,
-body a,
-body #btnnews,
-body li {
+
+  input::placeholder,
+#loupe,
+#newsletter,
+a,
+#btnnews,
+li {
     font-size: 0.8em !important;
   }
 }
 @media screen and (min-width: 375px) and (max-width: 425px) {
-  body h1 {
+  h1 {
     font-size: 2.5em !important;
   }
-  body h2 {
+
+  h2 {
     font-size: 1.5em !important;
   }
-  body h3 {
+
+  h3 {
     font-size: 1em;
   }
-  body input::placeholder,
-body #newsletter,
-body a,
-body #btnnews,
-body li {
+
+  input::placeholder,
+#newsletter,
+a,
+#btnnews,
+li {
     font-size: 0.8em !important;
   }
-  body #loupe,
-body #divimg {
+
+  #loupe,
+#divimg {
     display: none;
   }
 }
 @media all and (min-width: 320px) and (max-width: 375px) {
-  body h1 {
+  h1 {
     font-size: 2.5em !important;
   }
-  body h2 {
+
+  h2 {
     font-size: 1em !important;
   }
-  body h3,
-body p {
+
+  h3,
+p {
     font-size: 1em;
   }
-  body input::placeholder,
-body #newsletter,
-body a,
-body #btnnews,
-body li {
+
+  input::placeholder,
+#newsletter,
+a,
+#btnnews,
+li {
     font-size: 0.8em !important;
   }
-  body #loupe,
-body #divimg {
+
+  #loupe,
+#divimg {
     display: none;
   }
 }
 @media screen and (max-width: 320px) {
-  body h1 {
+  h1 {
     font-size: 1.8em !important;
   }
-  body h2 {
+
+  h2 {
     font-size: 0.8em !important;
   }
-  body h3,
-body p {
+
+  h3,
+p {
     font-size: 0.6em;
   }
-  body input::placeholder,
-body #newsletter,
-body a,
-body #btnnews,
-body li {
+
+  input::placeholder,
+#newsletter,
+a,
+#btnnews,
+li {
     font-size: 0.5em !important;
   }
-  body #loupe,
-body #divimg {
+
+  #loupe,
+#divimg {
     display: none;
   }
 }
