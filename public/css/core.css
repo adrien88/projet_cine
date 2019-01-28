@@ -73,11 +73,38 @@ body #header .carousel-inner .carousel-item .carousel-caption {
 body #header .carousel-inner .carousel-item .carousel-caption h3 {
   font-size: 2.5em;
 }
+body #main {
+  color: #ee2b2e;
+}
+body #main button {
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #ee2b2e;
+  border: none;
+}
+body #main input {
+  background-color: transparent;
+  border-color: #ee2b2e;
+}
+body #main input::placeholder {
+  color: #ee2b2e;
+  opacity: 0.5;
+}
+body #main input :hover {
+  background-color: transparent;
+  border: none;
+}
+body #main input input :active {
+  color: #ee2b2e;
+}
 body footer {
   background-color: black;
   color: #ee2b2e;
   padding: 1em;
   width: 100%;
+}
+body footer #footerimg {
+  background-image: url(public/images/footerimg.png);
 }
 body footer #footer-title {
   text-align: center;

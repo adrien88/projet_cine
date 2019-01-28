@@ -1,8 +1,5 @@
 {
-    "name": "adrien/projet_cine",
-    "description": "projet",
     "require": {
-        "twig/extensions": "2.0"
-    },
-    "license": "GPL"
+        "twig/twig": "^2.0"
+    }
 }

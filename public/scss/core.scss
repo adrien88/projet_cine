@@ -80,11 +80,48 @@
                 }
             }
         }
+
+#main{ 
+    h2 {
+        text-align: center;
+    }
+    #titleconnect {
+        padding-top: 100px;
+    }
+    button{
+        margin-top: 10px;
+        border-radius: 5px;
+        background-color: $secondarycolor;
+        border: none; 
+    }
+    color: $secondarycolor;
+    input{
+    background-color: transparent;
+    border-color: $secondarycolor; 
+    } 
+    input::placeholder {
+        color: $secondarycolor;
+        opacity: 0.5;
+    }
+    input {
+         :hover {
+            background-color: transparent;
+            border: none;
+        }
+        input {
+             :active {
+                color: $secondarycolor;
+            }
+        }
+    }
+}
         footer {
-            background-color: $primarycolor;
-            color: $secondarycolor;
-            padding: 1em;
-            width: 100%;
+            background-image: url(public/images/footerimg.png);
+
+                background-color: $primarycolor;
+                color: $secondarycolor;
+                padding: 1em;
+            }
             #footer-title {
                 text-align: center;
                 margin-top: -20px;

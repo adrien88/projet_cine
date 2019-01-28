@@ -4,25 +4,28 @@
   <div class="container">
       <div class="row">
           <div class="col-12">
-              <h2>CONNECTEZ-VOUS</h2>
+              <h2 id="titleconnect">SE CONNECTER</h2>
           </div>
       </div>
 
-      <div class="row">
+      <div id="test" class="row">
           <div class="col-6">
               <form method="post" action="">
-                  <label>Identifiant (email)</label><br>
-                  <input type="text" name="mailconnect" placeholder="Mail" value="{%if email is defined%} {{ mail1 }} {%endif%}">
+                  <label>Email</label><br>
+                  <input  type="text" name="mailconnect" placeholder="Mail" value="{%if email is defined%} {{ mail1 }} {%endif%}">
           </div>
           <div class="col-6">
-              <label for="password">Mot de passe :</label><br>
+              <label for="password">Mot de passe</label><br>
               <input type="password" name="mdpconnect">
           </div>
+        <div id="error"> 
+         {% if erreur is defined %} {{erreur}} {% endif %}
+        </div> 
       </div>
       <button type="submit" value="submit">Soumettre</button>
       </form>
 
-      {% if erreur is defined %} {{erreur}} {% endif %}
+      
 
   </div>
 {% endblock %}
