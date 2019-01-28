@@ -1,143 +1,333 @@
-    $primarycolor: black;
-    $secondarycolor: rgb(238, 43, 46);
-    $popcorn: rgb(255, 250, 233);
-    body {
+$primarycolor: black;
+$secondarycolor: rgb(238, 43, 46);
+$popcorn: rgb(255, 250, 233);
+body {
+    background-color: $primarycolor;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1em;
+    h1 {
+        font-size: 5em;
+        text-shadow: 1px 2px 2px grey;
+        text-align: left;
+        color: $popcorn;
+    }
+    h2 {
+        color: $popcorn;
+        font-size: 3em;
+        text-shadow: 1px 2px 2px black;
+    }
+    h3 {
+        color: $secondarycolor;
+        font-size: 2em;
+    }
+    h4,
+    p,
+    {
+        font-size: 1.5em;
+        color: $popcorn;
+        text-shadow: 1px 2px 2px black;
+    }
+    nav {
         background-color: $primarycolor;
-        font-family: 'Permanent Marker', cursive;
-        nav {
-            height: 150px;
-            background-color: $primarycolor;
-            font-size: 1em;
-            #titres {
-                color: $popcorn;
-                z-index: 5;
-                text-align: left;
-                h1 {
-                    font-size: 4em;
-                    text-shadow: 1px 2px 2px grey;
-                }
-            }
-            input {
-                height: 50px;
-                background-color: transparent;
-                width: 70%;
-                border: 2px solid $secondarycolor;
-                border-radius: 5px;
-            }
-            i {
-                color: $secondarycolor;
-                font-size: 2.5em;
-            }
-            input::placeholder {
-                color: $secondarycolor;
-                opacity: 0.5;
-            }
-            .navbar-toggler-icon {
-                background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
-                color: $secondarycolor;
-                background-color: $popcorn;
-            }
-            a {
-                color: $secondarycolor;
-                font-weight: 500;
-            }
-            a:hover {
-                color: $secondarycolor;
-                opacity: 0.5;
-                background-color: transparent;
-            }
+        #titres {
+            color: $popcorn;
+            z-index: 5;
+            text-align: justify;
+            margin-left: -10px;
         }
-        #header {
-            margin-top: 160px;
-            #rowtitre {
-                #titres {
-                    color: $popcorn;
-                    z-index: 5;
-                    text-align: center;
-                    h2 {
-                        font-size: 1.5em;
-                        text-shadow: 1px 2px 2px black;
-                    }
-                }
+        input {
+            background-color: transparent;
+            max-width: 70%;
+            border: 2px solid $secondarycolor;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        input:active {
+            border: none;
+        }
+        input::placeholder {
+            color: grey;
+            opacity: 0.5;
+            font-size: 1em;
+        }
+        i {
+            color: $secondarycolor;
+            font-size: 2.5em;
+        }
+        .navbar-toggler-icon {
+            background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
+            color: $secondarycolor;
+            background-color: $popcorn;
+        }
+        a {
+            color: $secondarycolor;
+            font-weight: 500;
+            font-size: 1.5em;
+        }
+        a:hover {
+            color: $secondarycolor;
+            opacity: 0.5;
+            background-color: transparent;
+        }
+        .dropdown-menu.show {
+            background-color: transparent;
+        }
+    }
+    #header {
+        #rowtitre {
+            h3 {
+                color: $popcorn;
             }
-            .carousel-indicators {
-                //margin-bottom: 15px;
-                color: $secondarycolor;
+            #titres {
+                z-index: 5;
+                text-align: center;
             }
             .carousel-inner {
                 .carousel-item {
-                    height: 500px;
+                    max-height: 500px;
                     position: relative;
                     .carousel-caption {
                         background-color: rgba(0, 0, 0, 0.5);
                         color: $popcorn;
                         text-shadow: 1px 2px 2px black;
-                        font-size: 1.5em;
-                        h3 {
-                            font-size: 2.5em;
-                        }
                     }
                 }
-            }
-        }
-        footer {
-            padding: 1em;
-            width: 100%;
-            #footer-title {
-                background-color: $secondarycolor;
-                color: $primarycolor;
-                text-align: center;
-                margin-top: -20px;
-                font-size: 1em;
-            }
-            input::placeholder {
-                color: grey;
-                opacity: 0.5;
-            }
-            input {
-                 :hover {
-                    background-color: transparent;
-                    border: none;
-                }
-                input {
-                     :active {
-                        color: $secondarycolor;
-                    }
-                }
-            }
-            #newsletter {
-                border: 2px solid $secondarycolor;
-                border-radius: 5px;
-                padding: 5px;
-                width: 80%;
-                height: 50px;
-                background-color: transparent;
-                font-size: 1.5em;
-            }
-            #btnnews {
-                background-color: transparent;
-                color: $secondarycolor;
-                border-color: transparent;
-                font-size: 3em;
-            }
-            li {
-                list-style: none;
-                font-size: 3em;
-                display: inline;
-                margin: 5px;
-                i {
-                    color: grey;
-                }
-            }
-            a {
-                color: $secondarycolor;
-            }
-            a:hover {
-                color: $secondarycolor;
-                text-transform: none;
-            }
-            h2 {
-                color: $secondarycolor;
             }
         }
     }
+    main {
+        #blocfilm {
+            margin-top: 20px;
+            padding-left: 10px;
+            h4,
+            p {
+                color: gray;
+            }
+        }
+        a:hover {
+            color: $secondarycolor;
+            text-decoration: none;
+            opacity: 0.5;
+        }
+        //main espace membre login
+        h2 {
+            text-align: center;
+        }
+        #titleconnect {
+            padding-top: 100px;
+        }
+        button {
+            margin-top: 10px;
+            border-radius: 5px;
+            background-color: $secondarycolor;
+            border: none;
+        }
+        color: $secondarycolor;
+        input {
+            background-color: transparent;
+            border-color: $secondarycolor;
+            border-radius: 5px;
+            padding: 5px;
+            max-width: 70%;
+        }
+        input::placeholder {
+            color: grey;
+            opacity: 0.5;
+        }
+        input {
+            color: $secondarycolor;
+             :hover {
+                background-color: transparent;
+                border: none;
+            }
+            input {
+                 :active {
+                    background-color: grey;
+                }
+            }
+        }
+    }
+    footer {
+        padding: 1em;
+        width: 100%;
+        #footer-title {
+            background-color: $secondarycolor;
+            color: $primarycolor;
+            text-align: center;
+            margin-top: -20px;
+            font-size: 1em;
+        }
+        input {
+            color: $secondarycolor;
+             :hover {
+                background-color: transparent;
+                border: none;
+            }
+            input {
+                 :active {
+                    color: $secondarycolor;
+                }
+            }
+        }
+        input::placeholder {
+            color: grey;
+            opacity: 0.5;
+            font-size: 1em;
+        }
+        i {
+            color: grey;
+            font-size: 3em;
+            margin-right: 10px;
+        }
+        #newsletter {
+            border: 2px solid $secondarycolor;
+            border-radius: 5px;
+            padding-top: 10px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            max-height: 50px;
+            background-color: transparent;
+            color: $secondarycolor;
+            padding: 5px;
+        }
+        #btnnews {
+            background-color: transparent;
+            color: $secondarycolor;
+            border-color: transparent;
+        }
+        a {
+            font-size: 0.8em;
+            color: grey !important;
+        }
+        a:hover {
+            color: $secondarycolor;
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+            display: inline;
+        }
+    }
+    // ----------------------------------- media queries ------------------------------
+    //desktop-laptop
+    @media all and (min-width: 1024px) and (max-width: 1280px) {
+        // input::placeholder,
+        #loupe {
+            font-size: 1em !important;
+        }
+        i {
+            font-size: 2.5em;
+        }
+    }
+    //laptop-tablet
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        h1 {
+            font-size: 3.5em !important;
+        }
+        h2 {
+            font-size: 2em !important;
+        }
+        h3 {
+            font-size: 1.8em;
+        }
+        input::placeholder,
+        #loupe,
+        #newsletter,
+        #btnnews,
+        a,
+        li {
+            font-size: 1em !important;
+        }
+    }
+    //tablet-mobile L
+    @media screen and (min-width: 425px) and (max-width: 768px) {
+        h1 {
+            font-size: 2.5em !important;
+        }
+        h2 {
+            font-size: 1.5em !important;
+        }
+        h3 {
+            font-size: 1em;
+        }
+        input::placeholder,
+        #loupe,
+        #newsletter,
+        a,
+        #btnnews,
+        li {
+            font-size: 0.8em !important;
+        }
+    }
+    //mobile L-mobile M
+    @media screen and (min-width: 375px) and (max-width: 425px) {
+        h1 {
+            font-size: 2.5em !important;
+        }
+        h2 {
+            font-size: 1.5em !important;
+        }
+        h3 {
+            font-size: 1em;
+        }
+        input::placeholder,
+        #newsletter,
+        a,
+        #btnnews,
+        li {
+            font-size: 0.8em !important;
+        }
+        #loupe,
+        #divimg {
+            display: none;
+        }
+    }
+    //mobile M-mobile S
+    @media all and (min-width: 320px) and (max-width: 375px) {
+        h1 {
+            font-size: 2.5em !important;
+        }
+        h2 {
+            font-size: 1em !important;
+        }
+        h3,
+        p {
+            font-size: 1em;
+        }
+        input::placeholder,
+        #newsletter,
+        a,
+        #btnnews,
+        li {
+            font-size: 0.8em !important;
+        }
+        #loupe,
+        #divimg {
+            display: none;
+        }
+    }
+    //sous mobile S
+    @media screen and (max-width: 320px) {
+        h1 {
+            font-size: 1.8em !important;
+        }
+        h2 {
+            font-size: 0.8em !important;
+        }
+        h3,
+        p {
+            font-size: 0.6em;
+        }
+        input::placeholder,
+        #newsletter,
+        a,
+        #btnnews,
+        li {
+            font-size: 0.5em !important;
+        }
+        #loupe,
+        #divimg {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+[site]
+  sitetitle = "CinéVore"
+  sitedescription = "Le site des amoureux du cinoche !"
+  landing = 'home'
+  charset = utf8
+  lang = fr
+
+
+[database]
+  host = localhost
+  name = cafeinline
+  login = Next
+  passwd =  Next
+  charset = utf8
