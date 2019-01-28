@@ -4,5 +4,5 @@
     "require": {
         "twig/extensions": "2.0"
     },
-    "license": "GPL"
+    "license": "GPL v2.0"
 }
