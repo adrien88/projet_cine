@@ -48,7 +48,7 @@ body {
         input::placeholder {
             color: grey;
             opacity: 0.5;
-            font-size: 1.5em;
+            font-size: 1em;
         }
         i {
             color: $secondarycolor;
@@ -135,13 +135,14 @@ body {
             opacity: 0.5;
         }
         input {
+            color: $secondarycolor;
              :hover {
                 background-color: transparent;
                 border: none;
             }
             input {
                  :active {
-                    color: $secondarycolor;
+                    background-color: grey;
                 }
             }
         }
@@ -157,6 +158,7 @@ body {
             font-size: 1em;
         }
         input {
+            color: $secondarycolor;
              :hover {
                 background-color: transparent;
                 border: none;
@@ -170,11 +172,12 @@ body {
         input::placeholder {
             color: grey;
             opacity: 0.5;
+            font-size: 1em;
         }
         i {
             color: grey;
             font-size: 3em;
-            margin: 5px;
+            margin-right: 10px;
         }
         #newsletter {
             border: 2px solid $secondarycolor;
@@ -193,19 +196,19 @@ body {
             border-color: transparent;
         }
         a {
-            font-size: 1em;
+            font-size: 0.8em;
             color: grey !important;
         }
         a:hover {
             color: $secondarycolor;
-            text-transform: none;
+            text-decoration: none;
         }
         li {
             list-style: none;
             display: inline;
         }
     }
-    //media queries
+    // ----------------------------------- media queries ------------------------------
     //desktop-laptop
     @media all and (min-width: 1024px) and (max-width: 1280px) {
         // input::placeholder,

@@ -46,7 +46,7 @@ body nav input:active {
 body nav input::placeholder {
   color: grey;
   opacity: 0.5;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 body nav i {
   color: #ee2b2e;
@@ -125,12 +125,15 @@ body main input::placeholder {
   color: grey;
   opacity: 0.5;
 }
+body main input {
+  color: #ee2b2e;
+}
 body main input :hover {
   background-color: transparent;
   border: none;
 }
 body main input input :active {
-  color: #ee2b2e;
+  background-color: grey;
 }
 body footer {
   padding: 1em;
@@ -143,6 +146,9 @@ body footer #footer-title {
   margin-top: -20px;
   font-size: 1em;
 }
+body footer input {
+  color: #ee2b2e;
+}
 body footer input :hover {
   background-color: transparent;
   border: none;
@@ -153,11 +159,12 @@ body footer input input :active {
 body footer input::placeholder {
   color: grey;
   opacity: 0.5;
+  font-size: 1em;
 }
 body footer i {
   color: grey;
   font-size: 3em;
-  margin: 5px;
+  margin-right: 10px;
 }
 body footer #newsletter {
   border: 2px solid #ee2b2e;
@@ -176,12 +183,12 @@ body footer #btnnews {
   border-color: transparent;
 }
 body footer a {
-  font-size: 1em;
+  font-size: 0.8em;
   color: grey !important;
 }
 body footer a:hover {
   color: #ee2b2e;
-  text-transform: none;
+  text-decoration: none;
 }
 body footer li {
   list-style: none;
