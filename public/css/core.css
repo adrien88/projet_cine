@@ -97,6 +97,9 @@ body main #blocfilm h4,
 body main #blocfilm p {
   color: gray;
 }
+body main h4:hover {
+  color: #ee2b2e;
+}
 body main a:hover {
   color: #ee2b2e;
   text-decoration: none;
@@ -134,6 +137,21 @@ body main input :hover {
 }
 body main input input :active {
   background-color: grey;
+}
+body main .navbar-toggler-icon {
+  color: #ee2b2e;
+  background-color: #fffae9;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
+}
+body main #navbarNav {
+  color: #ee2b2e !important;
+}
+body main #navbarNav li {
+  font-size: 0.8em;
+  padding: 10px;
+  border: 2px solid #ee2b2e;
+  border-radius: 5px;
+  margin: 5px;
 }
 body footer {
   padding: 1em;

@@ -104,6 +104,9 @@ body {
                 color: gray;
             }
         }
+        h4:hover {
+            color: $secondarycolor;
+        }
         a:hover {
             color: $secondarycolor;
             text-decoration: none;
@@ -144,6 +147,22 @@ body {
                  :active {
                     background-color: grey;
                 }
+            }
+        }
+        //navbar recherche par genres
+        .navbar-toggler-icon {
+            color: $secondarycolor;
+            background-color: $popcorn;
+            background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
+        }
+        #navbarNav {
+            color: $secondarycolor !important;
+            li {
+                font-size: 0.8em;
+                padding: 10px;
+                border: 2px solid $secondarycolor;
+                border-radius: 5px;
+                margin: 5px;
             }
         }
     }
