@@ -9,7 +9,7 @@
     $mail2 = htmlspecialchars($_POST['mail2']);
     $mdp1 = $_POST['mdp1'];
     $mdp2 = $_POST['mdp2'];
-    print_r($_POST);
+
 
     if(!empty($pseudo) AND !empty($mail1) AND !empty($mail2) AND !empty($mdp1) AND !empty($mdp2)) {
 
