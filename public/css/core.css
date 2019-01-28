@@ -121,6 +121,27 @@ body main input {
   padding: 5px;
   max-width: 70%;
 }
+body main footer {
+  padding: 1em;
+  width: 100%;
+  background-color: black;
+  color: #ee2b2e;
+  padding: 1em;
+}
+body main footer #footerimg {
+  background-image: url(../images/seat.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+body main #footer-title {
+  background-color: #ee2b2e;
+  color: black;
+  text-align: center;
+  margin-top: -20px;
+  font-size: 1em;
+}
 body main input::placeholder {
   color: grey;
   opacity: 0.5;
@@ -134,65 +155,6 @@ body main input :hover {
 }
 body main input input :active {
   background-color: grey;
-}
-body footer {
-  padding: 1em;
-  width: 100%;
-}
-body footer #footer-title {
-  background-color: #ee2b2e;
-  color: black;
-  text-align: center;
-  margin-top: -20px;
-  font-size: 1em;
-}
-body footer input {
-  color: #ee2b2e;
-}
-body footer input :hover {
-  background-color: transparent;
-  border: none;
-}
-body footer input input :active {
-  color: #ee2b2e;
-}
-body footer input::placeholder {
-  color: grey;
-  opacity: 0.5;
-  font-size: 1em;
-}
-body footer i {
-  color: grey;
-  font-size: 3em;
-  margin-right: 10px;
-}
-body footer #newsletter {
-  border: 2px solid #ee2b2e;
-  border-radius: 5px;
-  padding-top: 10px;
-  margin-bottom: 10px;
-  max-width: 80%;
-  max-height: 50px;
-  background-color: transparent;
-  color: #ee2b2e;
-  padding: 5px;
-}
-body footer #btnnews {
-  background-color: transparent;
-  color: #ee2b2e;
-  border-color: transparent;
-}
-body footer a {
-  font-size: 0.8em;
-  color: grey !important;
-}
-body footer a:hover {
-  color: #ee2b2e;
-  text-decoration: none;
-}
-body footer li {
-  list-style: none;
-  display: inline;
 }
 @media all and (min-width: 1024px) and (max-width: 1280px) {
   body #loupe {

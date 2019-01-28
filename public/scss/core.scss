@@ -130,6 +130,29 @@ body {
             padding: 5px;
             max-width: 70%;
         }
+  
+        footer {
+            
+        padding: 1em;
+        width: 100%;
+            #footerimg {
+                background-image: url(../images/seat.png);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 500px;
+            }
+                background-color: $primarycolor;
+                color: $secondarycolor;
+                padding: 1em;
+            }
+            #footer-title {
+                background-color: $secondarycolor;
+                color: $primarycolor;
+                text-align: center;
+                margin-top: -20px;
+                font-size: 1em;
+            }
         input::placeholder {
             color: grey;
             opacity: 0.5;
@@ -147,67 +170,10 @@ body {
             }
         }
     }
-    footer {
-        padding: 1em;
-        width: 100%;
-        #footer-title {
-            background-color: $secondarycolor;
-            color: $primarycolor;
-            text-align: center;
-            margin-top: -20px;
-            font-size: 1em;
-        }
-        input {
-            color: $secondarycolor;
-             :hover {
-                background-color: transparent;
-                border: none;
-            }
-            input {
-                 :active {
-                    color: $secondarycolor;
-                }
-            }
-        }
-        input::placeholder {
-            color: grey;
-            opacity: 0.5;
-            font-size: 1em;
-        }
-        i {
-            color: grey;
-            font-size: 3em;
-            margin-right: 10px;
-        }
-        #newsletter {
-            border: 2px solid $secondarycolor;
-            border-radius: 5px;
-            padding-top: 10px;
-            margin-bottom: 10px;
-            max-width: 80%;
-            max-height: 50px;
-            background-color: transparent;
-            color: $secondarycolor;
-            padding: 5px;
-        }
-        #btnnews {
-            background-color: transparent;
-            color: $secondarycolor;
-            border-color: transparent;
-        }
-        a {
-            font-size: 0.8em;
-            color: grey !important;
-        }
-        a:hover {
-            color: $secondarycolor;
-            text-decoration: none;
-        }
-        li {
-            list-style: none;
-            display: inline;
-        }
-    }
+
+    
+       
+    
     // ----------------------------------- media queries ------------------------------
     //desktop-laptop
     @media all and (min-width: 1024px) and (max-width: 1280px) {
