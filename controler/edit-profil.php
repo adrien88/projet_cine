@@ -9,10 +9,10 @@ if (isset($_POST) && !empty($_POST)){
 
 // Suppression
   if (isset($_POST['deleteMyAccount']) and $_POST['deleteMyAccount']==true){
-    $req = 'DELETE FROM user WHERE pseudo=?';
+    $req = 'DELETE FROM user WHERE `pseudo`= ?';
     $stat = $PDO->prepare($req);
     $stat->execute(array($_SESSION['pseudo']));
-    $req = 'DELETE FROM films WHERE nom=?';
+    $req = 'DELETE FROM films WHERE `nom` = ?';
     $stat = $PDO->prepare($req);
     $stat->execute(array($_SESSION['pseudo']));
 

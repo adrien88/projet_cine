@@ -31,7 +31,7 @@
                        $insertmbr = $PDO->prepare("INSERT INTO user(pseudo, email, password) VALUES(?, ?, ?)");
                        $insertmbr->execute(array($pseudo, $mail1, $mdp1));
                        $erreur = "Votre compte a bien été créé !";
-                       header("Location: profil.php");
+                       header("Location:".$_GET['docRoot']."edit-profil");
                        exit;
                     }
                      else {
