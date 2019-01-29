@@ -1,42 +1,35 @@
     $primarycolor: black;
     $secondarycolor: rgb(181, 9, 0);
     $popcorn: rgb(255, 250, 233);
-    @font-face {
-        font-family: "ciné";
-        src: url("../fonts/Dark_Black.otf");
-    }
-    
     body {
         background-color: $primarycolor;
-        font-family: "ciné";
+        font-family: 'Josefin Slab', serif;
+        color: $popcorn;
         font-size: 1em;
         h1 {
-            font-size: 5em;
-            text-shadow: 1px 2px 2px grey;
+            font-size: 4em;
+            //text-shadow: 1px 2px 2px grey;
             text-align: left;
-            color: $popcorn;
-            font-family: 'Permanent Marker', cursive;
+            font-family: 'Limelight', cursive;
         }
         h2 {
-            color: $popcorn;
             font-size: 3em;
             text-shadow: 1px 2px 2px black;
         }
         h3 {
-            color: $secondarycolor;
             font-size: 2em;
+            text-shadow: 1px 2px 2px grey;
         }
-        h4,
-        p,
-        {
-            font-size: 1.5em;
-            color: $popcorn;
+        h4 {
+            font-size: 1.8em;
             text-shadow: 1px 2px 2px black;
+        }
+        p {
+            font-size: 1.5em;
         }
         nav {
             background-color: $primarycolor;
             #titres {
-                color: $popcorn;
                 z-index: 5;
                 text-align: justify;
                 margin-left: -10px;
@@ -44,59 +37,62 @@
             input {
                 background-color: transparent;
                 max-width: 70%;
-                border: 2px solid $secondarycolor;
-                border-radius: 5px;
+                border: 1px solid $popcorn;
                 padding: 5px;
             }
             input:active {
                 border: none;
             }
             input::placeholder {
-                color: grey;
+                color: $popcorn;
                 opacity: 0.5;
                 font-size: 1em;
             }
             i {
-                color: $secondarycolor;
                 font-size: 2.5em;
+                color: $popcorn;
             }
             .navbar-toggler-icon {
                 background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
-                color: $secondarycolor;
                 background-color: $popcorn;
             }
             a {
-                color: $secondarycolor;
+                color: $popcorn;
                 font-weight: 500;
                 font-size: 1.5em;
             }
             a:hover {
-                color: $secondarycolor;
+                color: $popcorn;
                 opacity: 0.5;
                 background-color: transparent;
             }
             .dropdown-menu.show {
-                background-color: transparent;
+                background-color: $popcorn;
             }
         }
         #header {
+            #footerimg {
+                background-image: url(../images/seat.png);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 200px;
+                margin-top: 50PX;
+            }
             #rowtitre {
-                h3 {
-                    color: $popcorn;
-                }
                 #titres {
                     z-index: 5;
                     text-align: center;
                 }
-                .carousel-inner {
-                    .carousel-item {
-                        max-height: 500px;
-                        position: relative;
-                        .carousel-caption {
-                            background-color: rgba(0, 0, 0, 0.5);
-                            color: $popcorn;
-                            text-shadow: 1px 2px 2px black;
-                        }
+            }
+            .carousel-inner {
+                .carousel-item {
+                    max-height: 500px;
+                    position: relative;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    .carousel-caption {
+                        background-color: rgba(0, 0, 0, 0.5);
+                        text-shadow: 1px 2px 2px black;
                     }
                 }
             }
@@ -106,15 +102,16 @@
                 margin-top: 20px;
                 padding-left: 10px;
                 h4,
-                p {
-                    color: gray;
+                p,
+                a {
+                    color: $popcorn;
+                }
+                .titrefilm {
+                    height: 2.5em;
                 }
             }
-            h4:hover {
-                color: $secondarycolor;
-            }
             a:hover {
-                color: $secondarycolor;
+                background-color: $secondarycolor;
                 text-decoration: none;
                 opacity: 0.5;
             }
@@ -128,60 +125,51 @@
             button {
                 margin-top: 10px;
                 border-radius: 5px;
-                background-color: $secondarycolor;
+                background-color: $popcorn;
                 border: none;
             }
-            color: $secondarycolor;
             input {
-                background-color: transparent;
+                background-color: $popcorn;
                 border-color: $secondarycolor;
-                border-radius: 5px;
                 padding: 5px;
                 max-width: 70%;
                 //navbar recherche par genres
                 .navbar-toggler-icon {
-                    color: $secondarycolor;
+                    color: $popcorn;
                     background-color: $popcorn;
                     background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
                 }
             }
             #navbarNav {
-                color: $secondarycolor !important;
                 li {
                     font-size: 0.8em;
                     padding: 10px;
                     border: 2px solid $secondarycolor;
                     border-radius: 5px;
                     margin: 5px;
+                    margin-bottom: 40px;
                 }
             }
         }
         footer {
             padding: 1em;
             width: 100%;
-            #footerimg {
-                background-image: url(../images/seat.png);
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                height: 300px;
-            }
             background-color: $primarycolor;
-            color: $secondarycolor;
             padding: 1em;
             #footer-title {
                 background-color: $secondarycolor;
                 color: $primarycolor;
+                font-weight: bold;
                 text-align: center;
                 margin-top: -20px;
                 font-size: 1em;
             }
             input::placeholder {
-                color: grey;
+                color: $popcorn;
                 opacity: 0.5;
             }
             input {
-                color: $secondarycolor;
+                color: $popcorn;
                  :hover {
                     background-color: transparent;
                     border: none;
@@ -193,25 +181,23 @@
                 }
             }
             #newsletter {
-                border: 2px solid $secondarycolor;
-                border-radius: 5px;
-                padding-top: 10px;
-                margin-bottom: 10px;
+                border: 1px solid $popcorn;
                 max-width: 80%;
                 max-height: 50px;
                 background-color: transparent;
-                color: $secondarycolor;
                 padding: 5px;
             }
             #btnnews {
                 background-color: transparent;
-                color: $secondarycolor;
+                color: $popcorn;
                 border-color: transparent;
                 font-size: 2.5em;
+                align-items: center;
+                margin-top: 10px;
             }
             a {
                 font-size: 0.8em;
-                color: grey !important;
+                color: $popcorn !important;
             }
             a:hover {
                 color: $secondarycolor;

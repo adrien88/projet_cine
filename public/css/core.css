@@ -1,40 +1,33 @@
-@charset "UTF-8";
-@font-face {
-  font-family: "ciné";
-  src: url("../fonts/Dark_Black.otf");
-}
 body {
   background-color: black;
-  font-family: "ciné";
+  font-family: "Josefin Slab", serif;
+  color: #fffae9;
   font-size: 1em;
 }
 body h1 {
-  font-size: 5em;
-  text-shadow: 1px 2px 2px grey;
+  font-size: 4em;
   text-align: left;
-  color: #fffae9;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Limelight", cursive;
 }
 body h2 {
-  color: #fffae9;
   font-size: 3em;
   text-shadow: 1px 2px 2px black;
 }
 body h3 {
-  color: #b50900;
   font-size: 2em;
+  text-shadow: 1px 2px 2px grey;
 }
-body h4,
+body h4 {
+  font-size: 1.8em;
+  text-shadow: 1px 2px 2px black;
+}
 body p {
   font-size: 1.5em;
-  color: #fffae9;
-  text-shadow: 1px 2px 2px black;
 }
 body nav {
   background-color: black;
 }
 body nav #titres {
-  color: #fffae9;
   z-index: 5;
   text-align: justify;
   margin-left: -10px;
@@ -42,72 +35,73 @@ body nav #titres {
 body nav input {
   background-color: transparent;
   max-width: 70%;
-  border: 2px solid #b50900;
-  border-radius: 5px;
+  border: 1px solid #fffae9;
   padding: 5px;
 }
 body nav input:active {
   border: none;
 }
 body nav input::placeholder {
-  color: grey;
+  color: #fffae9;
   opacity: 0.5;
   font-size: 1em;
 }
 body nav i {
-  color: #b50900;
   font-size: 2.5em;
+  color: #fffae9;
 }
 body nav .navbar-toggler-icon {
   background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
-  color: #b50900;
   background-color: #fffae9;
 }
 body nav a {
-  color: #b50900;
+  color: #fffae9;
   font-weight: 500;
   font-size: 1.5em;
 }
 body nav a:hover {
-  color: #b50900;
+  color: #fffae9;
   opacity: 0.5;
   background-color: transparent;
 }
 body nav .dropdown-menu.show {
-  background-color: transparent;
+  background-color: #fffae9;
 }
-body #header #rowtitre h3 {
-  color: #fffae9;
+body #header #footerimg {
+  background-image: url(../images/seat.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  margin-top: 50PX;
 }
 body #header #rowtitre #titres {
   z-index: 5;
   text-align: center;
 }
-body #header #rowtitre .carousel-inner .carousel-item {
+body #header .carousel-inner .carousel-item {
   max-height: 500px;
   position: relative;
-}
-body #header #rowtitre .carousel-inner .carousel-item .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5);
-  color: #fffae9;
-  text-shadow: 1px 2px 2px black;
 }
-body main {
-  color: #b50900;
+body #header .carousel-inner .carousel-item .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 2px 2px black;
 }
 body main #blocfilm {
   margin-top: 20px;
   padding-left: 10px;
 }
 body main #blocfilm h4,
-body main #blocfilm p {
-  color: gray;
+body main #blocfilm p,
+body main #blocfilm a {
+  color: #fffae9;
 }
-body main h4:hover {
-  color: #b50900;
+body main #blocfilm .titrefilm {
+  height: 2.5em;
 }
 body main a:hover {
-  color: #b50900;
+  background-color: #b50900;
   text-decoration: none;
   opacity: 0.5;
 }
@@ -120,23 +114,19 @@ body main #titleconnect {
 body main button {
   margin-top: 10px;
   border-radius: 5px;
-  background-color: #b50900;
+  background-color: #fffae9;
   border: none;
 }
 body main input {
-  background-color: transparent;
+  background-color: #fffae9;
   border-color: #b50900;
-  border-radius: 5px;
   padding: 5px;
   max-width: 70%;
 }
 body main input .navbar-toggler-icon {
-  color: #b50900;
+  color: #fffae9;
   background-color: #fffae9;
   background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
-}
-body main #navbarNav {
-  color: #b50900 !important;
 }
 body main #navbarNav li {
   font-size: 0.8em;
@@ -144,34 +134,28 @@ body main #navbarNav li {
   border: 2px solid #b50900;
   border-radius: 5px;
   margin: 5px;
+  margin-bottom: 40px;
 }
 body footer {
   padding: 1em;
   width: 100%;
   background-color: black;
-  color: #b50900;
   padding: 1em;
-}
-body footer #footerimg {
-  background-image: url(../images/seat.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 300px;
 }
 body footer #footer-title {
   background-color: #b50900;
   color: black;
+  font-weight: bold;
   text-align: center;
   margin-top: -20px;
   font-size: 1em;
 }
 body footer input::placeholder {
-  color: grey;
+  color: #fffae9;
   opacity: 0.5;
 }
 body footer input {
-  color: #b50900;
+  color: #fffae9;
 }
 body footer input :hover {
   background-color: transparent;
@@ -181,25 +165,23 @@ body footer input input :active {
   background-color: grey;
 }
 body footer #newsletter {
-  border: 2px solid #b50900;
-  border-radius: 5px;
-  padding-top: 10px;
-  margin-bottom: 10px;
+  border: 1px solid #fffae9;
   max-width: 80%;
   max-height: 50px;
   background-color: transparent;
-  color: #b50900;
   padding: 5px;
 }
 body footer #btnnews {
   background-color: transparent;
-  color: #b50900;
+  color: #fffae9;
   border-color: transparent;
   font-size: 2.5em;
+  align-items: center;
+  margin-top: 10px;
 }
 body footer a {
   font-size: 0.8em;
-  color: grey !important;
+  color: #fffae9 !important;
 }
 body footer a:hover {
   color: #b50900;
