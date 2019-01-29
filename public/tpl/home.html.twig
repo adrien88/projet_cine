@@ -46,11 +46,24 @@
 
     {% if film %}
 
-      <div class="col-12">
-        <h4> {{ film.titre }} </h4>
-        <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
-        <p> {{ film.description }} </p>
-        <p> {{ film.genre }} </p>
+      <div class="col-12 filmMain" id="filmMain">
+        <div class="row">
+          <div class="col-6">
+            <h4> {{ film.titre }} </h4>
+            <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>{{ film.genre }}</li>
+              <li>{{ film.annee }}</li>
+              <li>{{ film.realisateurs }}</li>
+              <li>{{ film.acteurs }}</li>
+            </ul>
+          </div>
+          <div class="col-12">
+            <p> {{ film.description }} </p>
+          </div>
+        </div>
       </div>
 
     {% endif %}
