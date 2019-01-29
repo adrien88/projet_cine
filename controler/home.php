@@ -17,6 +17,14 @@ foreach($data as $row){
 }
 $tabcontroler = ['films' => $data, 'genres' => $genreList, 'printHeader'=>true];
 
+
+if (isset($_POST['searchFor']) and !empty($_POST['searchFor'])){
+  $retour = $PDO->query('SELECT * FROM films WHERE titre LIKE \'%'.$_POST['searchFor'].'%\';');
+  $data = $retour->fetchAll();
+  $tabcontroler = ['filmsrecherches' => $data, 'genres' => $genreList];
+}
+
+
 // // Rechercher un film par genre
 if(
   isset($_GET['args'][0]) AND
