@@ -62,6 +62,12 @@ if(isset($_POST) and !empty($_POST)){
        $cible = preg_replace('#(.*)\.(jpe?g)$#i','$1', $cible).'.jpg';
 
        $resultat = move_uploaded_file($_FILES['nouvelleaffiche']['tmp_name'],$cible);
+       $img = imagecreatefromjpeg($cible);
+       $scaled193 = imagescale($img,193);
+       imagejpeg($scaled193,$cible);
+       imagedestroy($scaled193);
+       imagedestroy($img);
+
        if ($resultat == false){
          $erreur .= "Erreur lors du déplacement du fichier.";
        }
