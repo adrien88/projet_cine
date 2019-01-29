@@ -1,9 +1,7 @@
 
 <?php
-$_SESSION = array();
-session_destroy();
-header("Location:./");
-exit;
-
-$tabcontroler = [];
+  $_SESSION = array();
+  session_destroy();
+  header("Location:./");
+  exit;
 ?>

@@ -46,12 +46,35 @@
 
     {% if film %}
 
-      <div class="col-12">
-        <h4> {{ film.titre }} </h4>
-        <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
-        <p> {{ film.description }} </p>
-        <p> {{ film.genre }} </p>
+   <div class="col-12" id="filmMain">
+     <div class="row">
+<div class="col-12">
+    <h4> {{ film.titre }} </h4>
+</div>
+     </div>
+        <div class="row">
+          <div class="col-2 offset-md-2">
+            <img id="affichefilm" class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg"> 
+          </div>
+          <div class="col-7">
+            <ul>
+              <p> {{ film.description }} </p>
+              <li>{{ film.genre }}</li>
+              <li>{{ film.annee }}</li>
+              <li>{{ film.realisateurs }}</li>
+              <li>{{ film.acteurs }}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12"> 
+            <div class="row">
+              <div id="footerimg" class="col-12">
+              </div>
+        </div>
       </div>
+
+
 
     {% endif %}
 

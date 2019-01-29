@@ -8,31 +8,47 @@
 
   <div class="container">
 
-      <h2>EDITION DU PROFIL</h2>
+      <h2 id="titleedit">EDITION DU PROFIL</h2>
       <form method="POST" action="" enctype="multipart/form-data">
 
           <div class="row">
             <div class="col-12">
               {{ erreur }}
             </div>
+
+            {% if deleteMyAccount %}
+
               <div class="col-6">
-                  <label>Pseudo :</label><br>
-                  <input type="text" name="newpseudo" placeholder="Pseudo" value="{{userinfo.pseudo}}" />
+                  <input id="DeleteAccount" type="checkbox" name="deleteMyAccount" required />
+                  <label for="DeleteAccount"> Confirmez la suppression. </label>
+              </div>
+
+            {% else %}
+
+              <div class="col-6">
+                <label>Pseudo :</label><br>
+                <input type="text" name="newpseudo" placeholder="Pseudo" value="{{userinfo.pseudo}}" />
               </div>
               <div class="col-6">
-                  <label>Mail :</label><br>
-                  <input type="text" name="newmail" placeholder="Mail" value="{{userinfo.email}}" />
+                <label>Mail :</label><br>
+                <input type="text" name="newmail" placeholder="Mail" value="{{userinfo.email}}" />
               </div>
               <div class="row"></div>
               <div class="col-6">
-                  <label>Mot de passe :</label><br>
-                  <input type="password" name="newmdp1" placeholder="Mot de passe" />
+                <label>Mot de passe :</label><br>
+                <input type="password" name="newmdp1" placeholder="Mot de passe" />
               </div>
               <div class="col-6">
-                  <label>Confirmation - mot de passe :</label><br>
-                  <input type="password" name="newmdp2" placeholder="Confirmation du mot de passe" />
+                <label>Confirmation - mot de passe :</label><br>
+                <input type="password" name="newmdp2" placeholder="Confirmation" />
               </div>
-              <input type="submit" value="Mettre à jour mon profil !" />
+
+            {% endif %}
+            {% if deleteMyAccount %}
+              <input type="submit" value="Supprimer mon profil !"></button>
+            {% else %}
+              <button type="submit">Mettre à jour mon profil !</button>
+            {% endif %}
           </div>
       </form>
 

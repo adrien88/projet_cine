@@ -5,9 +5,10 @@
       <h2>PROFIL DE {{ userinfo.pseudo }}</h2>
       <p>Mail : {{ userinfo.email }}</p>
       <br>
-        <a href="{{docRoot}}edit-profil">Edition profil</a>
-        <a href="{{docRoot}}edit-films/Éditer">Modifier mes film</a>
-        <a href="{{docRoot}}edit-films/Ajouter">Ajouter un film</a>
+        <a href="{{docRoot}}edit-profil"><button>Edition profil</button></a>
+        <a href="{{docRoot}}edit-profil/Supprimer"><button>Supprimer mon compte</button></a>
+        <a href="{{docRoot}}edit-films/Éditer"><button>Modifier mes films</button></a>
+        <a href="{{docRoot}}edit-films/Ajouter"><button>Ajouter un film</button></a>
   </section>
 
   {% block section %}
