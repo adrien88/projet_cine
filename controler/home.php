@@ -2,7 +2,7 @@
 
 // Fiche des films -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-$retour = $PDO->query('SELECT * FROM films');
+$retour = $PDO->query('SELECT * FROM films ORDER BY annee DESC LIMIT 8');
 $data = $retour->fetchAll();
 $genreList = [];
 foreach($data as $row){

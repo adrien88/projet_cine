@@ -8,13 +8,13 @@ $preremplissage = [];
 
 // verif formulaire soumission de films
 if(isset($_POST) and !empty($_POST)){
-  $filmId = ($_POST['id']);
-  $titre = ($_POST['titre']);
-  $annee = ($_POST['annee']);
-  $genre = ($_POST['genre']);
-  $acteurs = ($_POST['acteurs']);
-  $realisateurs = ($_POST['realisateurs']);
-  $description = ($_POST['description']);
+  $filmId = ($_POST['id']) ?? '';
+  $titre = ($_POST['titre']) ?? '';
+  $annee = ($_POST['annee']) ?? '';
+  $genre = ($_POST['genre']) ?? '';
+  $acteurs = ($_POST['acteurs']) ?? '';
+  $realisateurs = ($_POST['realisateurs']) ?? '';
+  $description = ($_POST['description']) ?? '';
   $errorMsg = "";
 
   if(!empty($titre) AND !empty($annee) AND
@@ -72,11 +72,11 @@ if(isset($_POST) and !empty($_POST)){
    }
 
    if ($_POST['hidden']=='Ajouter') {
-     $req = "INSERT INTO films(titre, annee, genre, acteurs, realisateurs, description, affiche) VALUES(?, ?, ?, ?, ?, ?, ?)";
+     $req = "INSERT INTO films(titre, annee, genre, acteurs, realisateurs, description, affiche, nom) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
      $insertfilm = $PDO->prepare($req);
      $insertfilm->execute(array(
        $titre, $annee, implode(',',$genre),
-       $acteurs, $realisateurs, $description, $sqlFilename
+       $acteurs, $realisateurs, $description, $sqlFilename, $_SESSION['pseudo']
      ));
      $erreur = "Merci pour votre contribution.";
    }
@@ -93,7 +93,7 @@ if(isset($_POST) and !empty($_POST)){
    */
 
    elseif ($_POST['hidden']=='Supprimer') {
-     $req = "DELETE films WHERE id=?" ;
+     $req = "DELETE FROM films WHERE id=?" ;
      $updatefilm = $PDO->prepare($req);
      $updatefilm->execute(array(
        $filmId
@@ -107,12 +107,10 @@ if(isset($_POST) and !empty($_POST)){
  $requete->execute(array($_SESSION['pseudo']));
  $listfilmsoumis =  $requete->fetchAll();
 
-   // Rechercher un film par genre
    if(
      isset($_GET['args'][0]) AND
      $_GET['args'][0] == 'Éditer'
    ){
-     // Rechercher un film par genre
      if(
        isset($_GET['args'][1]) AND
        !empty($_GET['args'][1])
@@ -123,8 +121,24 @@ if(isset($_POST) and !empty($_POST)){
        $actionForm = 'Éditer';
        $preremplissage = $data;
      }
-     // chercher le film à modifier
    }
+
+   if(
+     isset($_GET['args'][0]) AND
+     $_GET['args'][0] == 'Supprimer'
+   ){
+     if(
+       isset($_GET['args'][1]) AND
+       !empty($_GET['args'][1])
+     ){
+       $requete = $PDO->prepare('SELECT * FROM films WHERE id = ?;');
+       $requete->execute(array($_GET['args'][1]));
+       $data =  $requete ->fetch();
+       $actionForm = 'Supprimer';
+       $preremplissage = $data;
+     }
+   }
+
 
    $listImgs=[];
    foreach(glob('public/images/*.jpg') as $file){

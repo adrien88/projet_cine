@@ -1,13 +1,23 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "ciné";
+  src: url("../fonts/Philosopher-Regular.ttf");
+}
+@font-face {
+  font-family: "cinetitle";
+  src: url("../fonts/Megrim.ttf");
+}
 body {
   background-color: black;
-  font-family: "Permanent Marker", cursive;
-  font-size: 1em;
+  font-family: "ciné";
+  font-size: em1;
 }
 body h1 {
-  font-size: 5em;
+  font-size: 3em;
   text-shadow: 1px 2px 2px grey;
   text-align: left;
   color: #fffae9;
+  font-family: "cinetitle", cursive;
 }
 body h2 {
   color: #fffae9;
@@ -15,12 +25,12 @@ body h2 {
   text-shadow: 1px 2px 2px black;
 }
 body h3 {
-  color: #ee2b2e;
-  font-size: 2em;
+  color: #7c0707;
+  font-size: 1.3em;
 }
 body h4,
 body p {
-  font-size: 1.5em;
+  font-size: 1.1em;
   color: #fffae9;
   text-shadow: 1px 2px 2px black;
 }
@@ -36,7 +46,7 @@ body nav #titres {
 body nav input {
   background-color: transparent;
   max-width: 70%;
-  border: 2px solid #ee2b2e;
+  border: 2px solid #7c0707;
   border-radius: 5px;
   padding: 5px;
 }
@@ -49,21 +59,21 @@ body nav input::placeholder {
   font-size: 1em;
 }
 body nav i {
-  color: #ee2b2e;
+  color: #7c0707;
   font-size: 2.5em;
 }
 body nav .navbar-toggler-icon {
   background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
-  color: #ee2b2e;
+  color: #7c0707;
   background-color: #fffae9;
 }
 body nav a {
-  color: #ee2b2e;
+  color: #7c0707;
   font-weight: 500;
   font-size: 1.5em;
 }
 body nav a:hover {
-  color: #ee2b2e;
+  color: #7c0707;
   opacity: 0.5;
   background-color: transparent;
 }
@@ -87,7 +97,32 @@ body #header #rowtitre .carousel-inner .carousel-item .carousel-caption {
   text-shadow: 1px 2px 2px black;
 }
 body main {
-  color: #ee2b2e;
+  color: #7c0707;
+}
+body main #filmMain #affiche {
+  background-image: url("../images/{{ film.affiche }}.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+}
+body main #filmMain h4 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 1.6em;
+}
+body main #filmMain #footerimg {
+  margin-top: 70px;
+  background-image: url(../images/seat.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+body main #filmMain li {
+  list-style: none;
+  color: white;
+  font-size: 1.1em;
 }
 body main #blocfilm {
   margin-top: 20px;
@@ -97,8 +132,11 @@ body main #blocfilm h4,
 body main #blocfilm p {
   color: gray;
 }
+body main h4:hover {
+  color: #7c0707;
+}
 body main a:hover {
-  color: #ee2b2e;
+  color: #7c0707;
   text-decoration: none;
   opacity: 0.5;
 }
@@ -111,74 +149,89 @@ body main #titleconnect {
 body main button {
   margin-top: 10px;
   border-radius: 5px;
-  background-color: #ee2b2e;
+  background-color: #7c0707;
   border: none;
 }
 body main input {
   background-color: transparent;
-  border-color: #ee2b2e;
+  border-color: #7c0707;
   border-radius: 5px;
   padding: 5px;
   max-width: 70%;
 }
-body main footer {
+body main input .navbar-toggler-icon {
+  color: #7c0707;
+  background-color: #fffae9;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
+}
+body main #navbarNav {
+  color: #7c0707 !important;
+}
+body main #navbarNav li {
+  font-size: 0.8em;
+  padding: 10px;
+  border: 2px solid #7c0707;
+  border-radius: 5px;
+  margin: 5px;
+}
+body footer {
   padding: 1em;
   width: 100%;
+  background-color: black;
+  color: #7c0707;
+  padding: 1em;
 }
-body main footer #footer-title {
-  background-color: #ee2b2e;
+body footer #footer-title {
+  background-color: #7c0707;
   color: black;
   text-align: center;
   margin-top: -20px;
   font-size: 1em;
 }
-body main footer input {
-  color: #ee2b2e;
+body footer input::placeholder {
+  color: grey;
+  opacity: 0.5;
 }
-body main footer input :hover {
+body footer input {
+  color: #7c0707;
+}
+body footer input :hover {
   background-color: transparent;
   border: none;
 }
-body main footer input input :active {
-  color: #ee2b2e;
+body footer input input :active {
+  background-color: grey;
 }
-body main footer input::placeholder {
-  color: grey;
-  opacity: 0.5;
-  font-size: 1em;
-}
-body main footer i {
-  color: grey;
-  font-size: 3em;
-  margin-right: 10px;
-}
-body main footer #newsletter {
-  border: 2px solid #ee2b2e;
+body footer #newsletter {
+  border: 2px solid #7c0707;
   border-radius: 5px;
   padding-top: 10px;
   margin-bottom: 10px;
   max-width: 80%;
   max-height: 50px;
   background-color: transparent;
-  color: #ee2b2e;
+  color: #7c0707;
   padding: 5px;
 }
-body main footer #btnnews {
+body footer #btnnews {
   background-color: transparent;
-  color: #ee2b2e;
+  color: #7c0707;
   border-color: transparent;
+  font-size: 2.5em;
 }
-body main footer a {
+body footer a {
   font-size: 0.8em;
   color: grey !important;
 }
-body main footer a:hover {
-  color: #ee2b2e;
+body footer a:hover {
+  color: #7c0707;
   text-decoration: none;
 }
-body main footer li {
+body footer li {
   list-style: none;
   display: inline;
+  font-size: 3em;
+  margin-right: 10px;
 }
 @media all and (min-width: 1024px) and (max-width: 1280px) {
   body #loupe {

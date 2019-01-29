@@ -1,5 +1,11 @@
 {
     "require": {
+<<<<<<< HEAD
+        "twig/extensions": "2.0"
+    },
+    "license": "GPL v2.0"
+=======
         "twig/twig": "^2.0"
     }
+>>>>>>> 0c55ba7d620d7b1e0710ae0c2f30ad985f2da27f
 }
