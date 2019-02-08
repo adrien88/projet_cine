@@ -3,14 +3,13 @@
         <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
 
             <div class="col-5" id="titres">
-                <!--<a class="navbar-brand" href="./{{docRoot}}"><img id="logo" class="img-fluid" alt="logo du site popcorn kawai" src="{{ docRoot }}public/images/logov.png" width="80"></a>-->
                 <a class="navbar-brand" href="./{{docRoot}}">
                     <h1>cinéVore</h1>
                 </a>
             </div>
             <div class="col-5">
                 <form action="" method="post">
-                    <input id="placeholder" name="searchFor" type="search" placeholder="rechercher un film...">
+                    <input id="placeholder" name="searchFor" type="search" placeholder="Rechercher un film...">
                     <button class="btn" type="submit" id="loupe"><i class="fa fa-search"></i></button>
                 </form>
             </div>
@@ -22,7 +21,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Connecté en tant que <b>{{ compteId }}</b>
+            <b>{{ compteId }}</b>
           </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {% if compteId == 'invité' %}

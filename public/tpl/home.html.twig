@@ -30,11 +30,22 @@
       <h3>A l'affiche</h3>
       <div class="row">
         {% for key,film in films %}
-          <div id="blocfilm" class="col-sm-12 col-md-6 col-lg-3">
+          <div id="blocfilm" title="{{ film.titre }}" class="col-sm-12 col-md-6 col-lg-3">
+            <div class="illustration"
+              style="
+              width:100%;
+              height:300px;
+              background-image:url({{ docRoot }}public/images/{{ film.affiche }}.jpg);
+              background-repeat:no-repeat;
+              background-position:center center;
+              ">
+
+            </div>
             <a href="home/film/{{film.id }}">
-              <h4 class="titrefilm"> {{ film.titre }} </h4>
-              <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
-              <p> {{ film.genre }} </p>
+              <div class="texte">
+                <h4 class="titrefilm">  {{ film.titre }} </h4>
+                <p> {{ film.annee }} - {{ film.genre }} </p>
+              </div>
             </a>
           </div>
         {% endfor %}
@@ -54,7 +65,7 @@
      </div>
         <div class="row">
           <div class="col-2 offset-md-2">
-            <img id="affichefilm" class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg"> 
+            <img id="affichefilm" class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
           </div>
           <div class="col-7">
             <ul>
@@ -67,7 +78,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12"> 
+          <div class="col-12">
             <div class="row">
               <div id="footerimg" class="col-12">
               </div>
