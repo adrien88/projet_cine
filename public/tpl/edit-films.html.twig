@@ -14,7 +14,7 @@
               <div class="row">
                 {% for key,film in listfilmssoumis %}
                   <div class="col-sm-12 col-md-6 col-lg-4">
-                      <h3> {{ film.titre }} </h3>
+                      <h4> {{ film.titre }} </h4>
                       <img class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
                       <p> {{ film.genre }} </p>
                       <a href="{{ docRoot }}edit-films/Éditer/{{film.id }}">Modifier</a>
@@ -137,7 +137,7 @@
 
                 <label>Insérez l'affiche du film</label><br>
 
-                  Affiche actuelle : {{edititing.affiche}}.jpg<br>
+                  <p>Affiche actuelle : {{edititing.affiche}}.jpg</p><br>
                   <div id="locales-pics">
                       {% for affiche in listAffiche %}
                         <label for="id-{{affiche}}">
@@ -151,14 +151,14 @@
                       {% endfor %}
                   </div>
 
-                  Nouvelle affiche :
-                  <input type="file" name="nouvelleaffiche" ><br>
+                  <label>Nouvelle affiche :</label>
+                  <input type="file" name="nouvelleaffiche" style="background-color: transparent;"><br>
 
                 {# FIN FORMULAIRE STANDARD #}
                 {% endif %}
 
                 <hr>
-                <input type="submit" id="btn" value="Soumettre"> {% if msgerror is defined%} {{ msgerror }} {% endif %}
+                <button type="submit" id="btn" value="Soumettre">Soumettre</button> {% if msgerror is defined%} {{ msgerror }} {% endif %}
                 {# FIN DE FORMULAIRE #}
 
           </div>

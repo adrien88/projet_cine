@@ -44,12 +44,6 @@
    }
  }
 
- // PDO object: $PDO
- // select request : SELECT * FROM Users WHERE Prenom = "adrien" etc.
- //  return
- //     -> data[0]['stuff'] if multidimentional (any lines, numbured)
- //     -> data['stuff'] if only one row matche
- //     -> SQL error message if SQL Error
 
  function reqSelect($PDO, $req) {
    $stat = $PDO -> prepare($req);
@@ -68,15 +62,3 @@
 
 
 
-
-
-// echo '<pre>'.print_r(reqSelect($PDO, 'SELECT * FROM Users'),1).'</pre>';
-
-
- // reqpush($PDO,'Users',[
- //   'Prenom'=>'Jean-René',
- //   'Nom'=>'Boilley',
- //   'Departement'=>'Cote d\'Or',
- //   'Age'=>67,
- //   'Sexe'=>'homme']
- // );

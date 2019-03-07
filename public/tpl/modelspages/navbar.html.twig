@@ -7,22 +7,21 @@
                     <h1>cinéVore</h1>
                 </a>
             </div>
-            <div class="col-5">
-                <form action="" method="post">
-                    <input id="placeholder" name="searchFor" type="search" placeholder="Rechercher un film...">
+            <div class="col-4">
+                <form action="" method="post" id="search">
+                    <input id="placeholder" name="searchFor" type="search" placeholder="Rechercher...">
                     <button class="btn" type="submit" id="loupe"><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <b>{{ compteId }}</b>
-          </a>
+                            <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-users"></i><b>  {{ compteId }}</b></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {% if compteId == 'invité' %}
                                 <a class=" dropdown-item " href="{{docRoot}}connexion ">Connexion</a>

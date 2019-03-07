@@ -10,7 +10,7 @@ if(isset($_POST) and !empty($_POST)) {
    $requser = $PDO->prepare("SELECT * FROM user WHERE email = ?"); //verifier si l'user existe bien
    $requser->execute(array($mailconnect));
 
-   // si la requête n'aboutit pas, (au hasard baltazar : l'utilisateur n'existerait pas) ben ça retourne un booléen false.
+   // si la requête n'aboutit pas, ça retourne un booléen false.
    if($requser != false)  {
      $userinfo = $requser->fetch();
 

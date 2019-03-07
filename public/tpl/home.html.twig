@@ -27,9 +27,10 @@
 
 
     {% if films %}
-      <h3>A l'affiche</h3>
+      <!--<h3>A l'affiche</h3>-->
       <div class="row">
         {% for key,film in films %}
+          <a href="home/film/{{film.id }}">
           <div id="blocfilm" title="{{ film.titre }}" class="col-sm-12 col-md-6 col-lg-3">
             <div class="illustration"
               style="
@@ -41,7 +42,7 @@
               ">
 
             </div>
-            <a href="home/film/{{film.id }}">
+            
               <div class="texte">
                 <h4 class="titrefilm">  {{ film.titre }} </h4>
                 <p> {{ film.annee }} - {{ film.genre }} </p>
@@ -65,15 +66,15 @@
      </div>
         <div class="row">
           <div class="col-2 offset-md-2">
-            <img id="affichefilm" class="img-fluid" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
+            <img id="affichefilm" class="img-fluid" width="400" src="{{ docRoot }}public/images/{{ film.affiche }}.jpg">
           </div>
-          <div class="col-7">
+          <div class="col-6">
             <ul>
-              <p> {{ film.description }} </p>
-              <li>{{ film.genre }}</li>
-              <li>{{ film.annee }}</li>
-              <li>{{ film.realisateurs }}</li>
-              <li>{{ film.acteurs }}</li>
+              <p><b>Description : </b> {{ film.description }}</p>
+              <li><b>Catégorie : </b>{{ film.genre }}</li>
+              <li><b>Date : </b>{{ film.annee }}</li>
+              <li><b>Réalisateur(s) : </b>{{ film.realisateurs }}</li>
+              <li><b>Acteur(s) : </b>{{ film.acteurs }}</li>
             </ul>
           </div>
         </div>
